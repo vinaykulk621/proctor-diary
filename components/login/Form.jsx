@@ -3,6 +3,7 @@ import { SubmitButton } from "./SubmitButton";
 import { PasswordInput } from "./PasswordInput";
 import EmailIdInput from "./EmailIdInput";
 import { useRef } from "react";
+import Image from "next/image";
 
 const Form = () => {
   const email = useRef();
@@ -22,6 +23,15 @@ const Form = () => {
     >
       <div className="flex flex-1 p-5 flex-col items-center justify-center">
         <div className=" border-2 border-black bg-gray-700 justify-center items-center flex flex-col p-2">
+          <Image
+            src={
+              "https://mdb-community.s3.amazonaws.com/common/default-banner-img.png"
+            }
+            alt="chumma"
+            width={100}
+            height={100}
+            priority
+          />
           <EmailIdInput emailRef={email} />
           <PasswordInput passwordRef={password} />
           <SubmitButton />
