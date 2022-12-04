@@ -18,11 +18,11 @@ const Form = () => {
 
   return (
     <form
-      className="bg-blue-400 flex w-screen h-screen"
+      className="bg-blue-400 flex w-screen h-screen z-0"
       onSubmit={submitHandler}
     >
-      <div className="flex flex-1 p-5 flex-col items-center justify-center">
-        <div className=" border-2 border-black bg-gray-700 justify-center items-center flex flex-col p-2">
+      <div className="flex flex-1 p-5 flex-col items-center justify-center box-border">
+        <div className=" border-2 border-black bg-gray-700 justify-center items-center flex flex-col">
           <Image
             src={
               "https://mdb-community.s3.amazonaws.com/common/default-banner-img.png"

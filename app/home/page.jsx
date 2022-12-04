@@ -1,3 +1,7 @@
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <>
+      <p className="p-7">home</p>
+    </>
+  );
 }
