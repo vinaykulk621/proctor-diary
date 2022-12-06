@@ -1,7 +1,9 @@
+import Wrapper from "../components/global/Wrapper";
+
 export default function Home() {
   return (
-    <>
-      <p className="p-7">home</p>
-    </>
+    <Wrapper>
+      <p>Home</p>
+    </Wrapper>
   );
 }

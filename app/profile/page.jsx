@@ -2,9 +2,10 @@ import { LeftSideCards } from "../../components/profile/LeftSideCards";
 import { RightSideCards } from "../../components/profile/RightSideCards";
 import Image from "next/image";
 import profile from "../../public/profile_icon.png";
+import Wrapper from "../../components/global/Wrapper";
 export default function Home() {
   return (
-    <div className="flex pt-28">
+    <Wrapper>
       {/* two main divs for left and right part of the page */}
       <div className="flex flex-row justify-around flex-1">
         <div className="flex h-auto w-1/3 bg-gray-100 ml-4 mr-3 justify-center items-center flex-col rounded-lg">
@@ -26,6 +27,6 @@ export default function Home() {
           <RightSideCards />
         </div>
       </div>
-    </div>
+    </Wrapper>
   );
 }
