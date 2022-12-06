@@ -1,28 +1,40 @@
-import NavBar from "../components/navigation/NavBar";
+import { NavigationBar } from "../components/navigation/NavigationBar";
+import Image from "next/image";
+import logoWhiteFont from "../public/logoWhiteFont.png";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
       <body>
         {/* Navigation Links */}
-        <header className="top-0 absolute">
-          <nav className="flex space-x-5 px-4">
-            <NavBar href="/" children="Login" />
-            <NavBar href="/home" children="Home" />
-            <NavBar href="/profile" children="Profile" />
-            <NavBar
-              href="/course-registration"
-              children="course-registration"
+        <header className="flex top-0 absolute bg-black text-white w-screen m-auto flex-row justify-around">
+          <div className="flex">
+            <Image
+              src={logoWhiteFont}
+              alt="logoWhiteFont"
+              width={100}
+              height={100}
             />
-            <NavBar href="/activity-points" children="activity-points" />
-          </nav>
+          </div>
+          <NavigationBar />
+          <Image
+            src={logoWhiteFont}
+            alt="logoWhiteFont"
+            width={100}
+            height={100}
+          />
+          {/* black profile photo */}
+          {/* <Image
+            src={profile}
+            alt="profilePicture"
+            width={100}
+            height={100}
+            priority
+          /> */}
         </header>
+
         {children}
       </body>
     </html>

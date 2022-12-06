@@ -1,9 +1,7 @@
-import Form from "../components/login/Form";
-
 export default function Home() {
   return (
     <>
-      <Form />
+      <p className="p-7">home</p>
     </>
   );
 }

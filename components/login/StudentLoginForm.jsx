@@ -1,18 +1,19 @@
 "use client";
 import { SubmitButton } from "./SubmitButton";
 import { PasswordInput } from "./PasswordInput";
-import EmailIdInput from "./EmailIdInput";
 import { useRef } from "react";
 import Image from "next/image";
+import USNInput from "./USNInput";
+import logoWhiteFont from "../../public/logoWhiteFont.png";
 
-const Form = () => {
-  const email = useRef();
+const StudentLoginForm = () => {
+  const USN = useRef();
   const password = useRef();
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    console.log(email.current.value);
+    console.log(USN.current.value);
     console.log(password.current.value);
   };
 
@@ -24,15 +25,13 @@ const Form = () => {
       <div className="flex flex-1 p-5 flex-col items-center justify-center box-border">
         <div className=" border-2 border-black bg-gray-700 justify-center items-center flex flex-col">
           <Image
-            src={
-              "https://mdb-community.s3.amazonaws.com/common/default-banner-img.png"
-            }
-            alt="chumma"
+            src={logoWhiteFont}
+            alt="logoWhiteFont"
             width={100}
             height={100}
             priority
           />
-          <EmailIdInput emailRef={email} />
+          <USNInput USNRef={USN} />
           <PasswordInput passwordRef={password} />
           <SubmitButton />
         </div>
@@ -41,4 +40,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default StudentLoginForm;

@@ -1,0 +1,1 @@
+padding from the navigation bar shiuld be atleast 28
