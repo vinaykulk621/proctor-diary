@@ -1,5 +1,5 @@
 import dbConnect from '../../../utils/dbConnection'
-import { getReq, postReq } from '../../../utils/allReq'
+import { getReq, postReq } from '../../../utils/examples/allReq'
 
 export default async (req, res) => {
     dbConnect().catch(() => res.status(405).json({ message: "fialure" }))

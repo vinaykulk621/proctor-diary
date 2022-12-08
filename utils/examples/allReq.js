@@ -49,14 +49,3 @@ export async function deleteUser(req, res) {
         res.status(404).json({ error: "Error While Deleting the User...!" })
     }
 }
-export async function getSingleUserReq(req, res) {
-    try {
-        const { _id } = req.body
-        if (_id) {
-            const user = await Users.findById(_id)
-            return res.status(200).json({ user: user })
-        }
-    } catch (e) {
-        res.status(405).json({ message: "data Not Found" })
-    }
-}

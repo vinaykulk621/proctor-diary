@@ -5,7 +5,7 @@ export function PasswordInput(props) {
         password
       </label>
       <input
-        type="text"
+        type="password"
         name="passwordId"
         className="ml-2 rounded-sm"
         id="passwordId"

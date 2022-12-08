@@ -1,26 +1,36 @@
 "use client";
+
 import { SubmitButton } from "./SubmitButton";
 import { PasswordInput } from "./PasswordInput";
 import { useRef } from "react";
 import Image from "next/image";
 import USNInput from "./USNInput";
 import logoWhiteFont from "../../public/logoWhiteFont.png";
+// import authMe from "../../utils/auth";
+import { useRouter } from "next/navigation";
 
 const StudentLoginForm = () => {
+  // REFS's
   const USN = useRef();
   const password = useRef();
 
-  const submitHandler = (e) => {
+  const router = useRouter();
+
+  // Authentication
+  function Authenticate(e) {
     e.preventDefault();
 
-    console.log(USN.current.value);
-    console.log(password.current.value);
-  };
+    const userUSN = USN.current.value;
+    const userpswd = password.current.value;
 
+    // if (authMe(userUSN, userpswd)) {
+    //   router.push("/profile");
+    // }
+  }
   return (
     <form
       className="bg-blue-400 flex w-screen h-screen z-0"
-      onSubmit={submitHandler}
+      onSubmit={Authenticate}
     >
       <div className="flex flex-1 p-5 flex-col items-center justify-center box-border">
         <div className=" border-2 border-black bg-gray-700 justify-center items-center flex flex-col">
