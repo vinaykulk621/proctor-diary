@@ -1,5 +1,4 @@
 "use client";
-
 import { SubmitButton } from "./SubmitButton";
 import { PasswordInput } from "./PasswordInput";
 import { useRef } from "react";
