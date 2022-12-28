@@ -1,5 +1,5 @@
-import { LeftSideCards } from "../../components/profile/LeftSideCards";
-import { RightSideCards } from "../../components/profile/RightSideCards";
+import { LeftSideCards } from "../../components/home/DashBoard/LeftSideCards";
+import { RightSideCards } from "../../components/home/DashBoard/RightSideCards";
 import Image from "next/image";
 import profile from "../../public/profile_icon.png";
 import Wrapper from "../../components/global/Wrapper";
