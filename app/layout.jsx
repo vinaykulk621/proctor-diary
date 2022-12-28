@@ -1,6 +1,7 @@
 import { NavigationBar } from "../components/navigation/NavigationBar";
 import Image from "next/image";
 import logoWhiteFont from "../public/logoWhiteFont.png";
+import profile from "../public/profile_photo.png";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
@@ -19,20 +20,14 @@ export default function RootLayout({ children }) {
             />
           </div>
           <NavigationBar />
-          <Image
-            src={logoWhiteFont}
-            alt="logoWhiteFont"
-            width={100}
-            height={100}
-          />
-          {/* black profile photo */}
-          {/* <Image
-            src={profile}
-            alt="profilePicture"
-            width={100}
-            height={100}
-            priority
-          /> */}
+          <div className="flex items-center">
+            <Image
+              src={profile}
+              alt="profilePicture"
+              priority
+              className="rounded-full w-16 h-16 "
+            />
+          </div>
         </header>
 
         {children}
