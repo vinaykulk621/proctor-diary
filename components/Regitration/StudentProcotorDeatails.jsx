@@ -1,5 +1,5 @@
 import React from "react";
-import { Tablets } from "./tablets";
+import { Tablets } from "../global/Tablet";
 import { ProfilePallete } from "../global/profilePallete";
 export function StudentProcotorDeatails({}) {
   return (
