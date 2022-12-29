@@ -1,12 +1,16 @@
-import { ProfilePallete } from "../../components/global/profilePallete";
+import { PrevSemCourses } from "../../components/Regitration/PrevSemCourses";
+import { CurrentSemCourses } from "../../components/Regitration/CurrentSemCourses";
+import { StudentProcotorDeatails } from "../../components/Regitration/StudentProcotorDeatails";
 import Wrapper from "../../components/global/Wrapper";
 
 export default function Home() {
   return (
     <Wrapper>
-      <div className="flex flex-row">
-        <div className="flex-col">Yes</div>
-        <div className="flex-row"></div>
+      <StudentProcotorDeatails />
+      <div className="flex flex-col w-screen">
+        <CurrentSemCourses />
+        <div className="h-20"></div>
+        <PrevSemCourses />
       </div>
     </Wrapper>
   );
