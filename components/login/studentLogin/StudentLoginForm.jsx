@@ -1,10 +1,10 @@
 "use client";
-import { SubmitButton } from "./SubmitButton";
-import { PasswordInput } from "./PasswordInput";
+import { SubmitButton } from "../utils/SubmitButton";
+import { PasswordInput } from "../utils/PasswordInput";
 import { useRef } from "react";
 import Image from "next/image";
-import USNInput from "./USNInput";
-import logoWhiteFont from "../../public/logoWhiteFont.png";
+import USNInput from "../utils/USNInput";
+import logoWhiteFont from "../../../public/logoWhiteFont.png";
 // import authMe from "../../utils/auth";
 import { useRouter } from "next/navigation";
 

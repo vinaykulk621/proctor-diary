@@ -1,4 +1,4 @@
-import StudentLoginForm from "../../components/login/StudentLoginForm";
+import StudentLoginForm from "../../components/login/studentLogin/StudentLoginForm";
 
 export default function StudentLogin() {
   return (

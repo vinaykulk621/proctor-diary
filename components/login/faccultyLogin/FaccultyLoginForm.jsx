@@ -1,10 +1,10 @@
 "use client";
-import { SubmitButton } from "./SubmitButton";
-import { PasswordInput } from "./PasswordInput";
-import EmailIdInput from "./EmailIdInput";
+import { SubmitButton } from "../utils/SubmitButton";
+import { PasswordInput } from "../utils/PasswordInput";
+import EmailIdInput from "../utils/EmailIdInput";
 import { useRef } from "react";
 import Image from "next/image";
-import logoWhiteFont from "../../public/logoWhiteFont.png";
+import logoWhiteFont from "../../../public/logoWhiteFont.png";
 
 const FaccultyLoginForm = () => {
   const email = useRef();
