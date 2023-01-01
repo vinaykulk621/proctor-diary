@@ -3,7 +3,7 @@ import { SubmitButton } from "../utils/SubmitButton";
 import { PasswordInput } from "../utils/PasswordInput";
 import { useRef } from "react";
 import Image from "next/image";
-import USNInput from "../utils/USNInput";
+import USNInput from "../../global/USNInput";
 import logoWhiteFont from "../../../public/logoWhiteFont.png";
 // import authMe from "../../utils/auth";
 import { useRouter } from "next/navigation";
