@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Wrapper>
       <StudentProcotorDeatails />
-      <div className="flex flex-col w-screen">
+      <div className="flex flex-col">
         <CurrentSemCourses />
         <div className="h-20"></div>
         <PrevSemCourses />

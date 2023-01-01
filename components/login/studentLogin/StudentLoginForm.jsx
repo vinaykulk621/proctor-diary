@@ -28,11 +28,11 @@ const StudentLoginForm = () => {
   }
   return (
     <form
-      className="bg-blue-400 flex w-screen h-screen z-0"
+      className="bg-blue-400 flex w-screen h-screen"
       onSubmit={Authenticate}
     >
-      <div className="flex flex-1 p-5 flex-col items-center justify-center box-border">
-        <div className=" border-2 border-black bg-gray-700 justify-center items-center flex flex-col">
+      <div className="flex flex-1 p-5 flex-col items-center justify-center box-border ">
+        <div className=" border-2 border-black bg-gray-700 justify-center items-center flex flex-col rounded-md space-y-2">
           <Image
             src={logoWhiteFont}
             alt="logoWhiteFont"

@@ -10,11 +10,11 @@ export default function Home() {
     <Wrapper>
       <FirstSection laptopBG={laptopBG} />
 
-      <div className="h-28"></div>
+      <div className="h-28" />
 
       <RolesFinalContainer />
 
-      <div className="border-t-8 border-yellow-400"></div>
+      <div className="border-b-8 border-yellow-400 mb-20 mt-20" />
 
       <GuideLinesFinalContainer />
     </Wrapper>

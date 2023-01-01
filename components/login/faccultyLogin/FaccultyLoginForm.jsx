@@ -23,7 +23,7 @@ const FaccultyLoginForm = () => {
       onSubmit={submitHandler}
     >
       <div className="flex flex-1 p-5 flex-col items-center justify-center box-border">
-        <div className=" border-2 border-black bg-gray-700 justify-center items-center flex flex-col">
+        <div className=" border-2 border-black bg-gray-700 justify-center items-center flex flex-col rounded-md">
           <Image
             src={logoWhiteFont}
             alt="chumma"
