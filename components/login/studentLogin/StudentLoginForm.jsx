@@ -5,26 +5,30 @@ import { useRef } from "react";
 import Image from "next/image";
 import USNInput from "../../global/USNInput";
 import logoWhiteFont from "../../../public/logoWhiteFont.png";
-// import authMe from "../../utils/auth";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 const StudentLoginForm = () => {
   // REFS's
   const USN = useRef();
   const password = useRef();
 
-  const router = useRouter();
-
   // Authentication
-  function Authenticate(e) {
+  async function Authenticate(e) {
     e.preventDefault();
 
     const userUSN = USN.current.value;
     const userpswd = password.current.value;
-
+    const credentials = { userUSN, userpswd };
     // if (authMe(userUSN, userpswd)) {
     //   router.push("/profile");
     // }
+    try {
+      const user = await axios.post("pages/api/login.js", credentials);
+      console.log(user);
+    } catch (e) {
+      console.log(e);
+    }
   }
   return (
     <form
