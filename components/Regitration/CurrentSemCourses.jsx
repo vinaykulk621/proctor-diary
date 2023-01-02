@@ -3,7 +3,7 @@ export function CurrentSemCourses({}) {
   return (
     <>
       <h1 className="text-3xl p-5">Curresnt Semester</h1>
-      <table className="table-auto text-justify ml-5 mr-5">
+      <table className="table-fixed text-justify ml-5 mr-5">
         <thead>
           <tr className="border-2 border-solid border-l-0 border-r-0 border-t-0 border-yellow-400">
             <th>S no.</th>
@@ -83,9 +83,9 @@ export function CurrentSemCourses({}) {
       </table>
       <button
         type="submit"
-        className="bg-blue-500 px-2 py-1 rounded-lg w-40 relative right-1/2 left-1/2 -bottom-8"
+        className="bg-green-500 px-2 py-1 rounded-lg w-40 relative right-1/2 left-1/2 -bottom-8"
       >
-        Register
+        Registered
       </button>
     </>
   );

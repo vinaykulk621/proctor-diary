@@ -9,13 +9,9 @@ export default function Home() {
   return (
     <Wrapper>
       <FirstSection laptopBG={laptopBG} />
-
       <div className="h-28" />
-
       <RolesFinalContainer />
-
       <div className="border-b-8 border-yellow-400 mb-20 mt-20" />
-
       <GuideLinesFinalContainer />
     </Wrapper>
   );

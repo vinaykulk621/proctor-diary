@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       <head />
       <body className="overflow-x-hidden">
         {/* Navigation Links */}
-        <header className="flex top-0 absolute bg-black text-white w-screen m-auto flex-row justify-around">
+        <header className="flex top-0 bg-black text-white w-screen m-auto flex-row justify-around fixed">
           <div className="flex">
             <Image
               src={logoWhiteFont}
