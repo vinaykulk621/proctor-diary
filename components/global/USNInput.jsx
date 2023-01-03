@@ -9,7 +9,6 @@ const USNInput = (props) => {
         name="USN"
         className="ml-10 rounded-sm"
         id="USN"
-        ref={props.USNRef}
       />
     </div>
   );

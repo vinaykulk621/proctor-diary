@@ -1,15 +1,15 @@
-import mongoose from "mongoose"
-const dbConnect = async () => {
-    try {
-        const { connection } = await mongoose.connect(process.env.MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        })
-        if (connection.readyState == 1) {
-            console.log("Database Is On Fire")
-        }
-    } catch (errors) {
-        return Promise.reject(errors)
+import mongoose from "mongoose";
+
+const connection = {};
+
+async function dbConnect() {
+    if (connection.isConnected) {
+        return;
     }
+    mongoose.set("strictQuery", false);
+    const db = await mongoose.connect(process.env.MONGO_URI)
+    console.log("Database Hot!!");
+    connection.isConnected = db.connections[0].readyState;
 }
+
 export default dbConnect;

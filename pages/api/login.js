@@ -1,19 +1,23 @@
 import { sign } from "jsonwebtoken";
 import { serialize } from "cookie";
+import dbConnect from "../../utils/dbConnection";
+import User from '../../models/user'
 
 const secret = process.env.SECRET;
 
-export default async function (req, res) {
-    const { username, password } = req.body;
-
-    // Check in the database
-    // if a user with this username
-    // and password exists
-    if (username === "Admin" && password === "Admin") {
+dbConnect()
+export default async function handler(req, res) {
+    const { email, password } = req.body
+    const user = await User.find({ email, password })
+    console.log(user);
+    if (!user) {
+        return res.json({ status: 'Not able to find the user' })
+    }
+    else {
         const token = sign(
             {
                 exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30, // 30 days
-                username: username,
+                email: email,
             },
             secret
         );
@@ -26,10 +30,9 @@ export default async function (req, res) {
             path: "/",
         });
 
+        console.log();
         res.setHeader("Set-Cookie", serialised);
-
-        res.status(200).json({ message: "Success!" });
-    } else {
-        res.json({ message: "Invalid credentials!" });
+        res.redirect("/")
     }
 }
+

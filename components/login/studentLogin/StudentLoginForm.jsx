@@ -1,39 +1,31 @@
 "use client";
 import { SubmitButton } from "../utils/SubmitButton";
 import { PasswordInput } from "../utils/PasswordInput";
-import { useRef } from "react";
+import Wrapper from "../../../components/global/Wrapper";
 import Image from "next/image";
 import USNInput from "../../global/USNInput";
 import logoWhiteFont from "../../../public/logoWhiteFont.png";
-import { useRouter } from "next/navigation";
-import axios from "axios";
+import EmailIdInput from "../utils/EmailIdInput";
 
+{
+  /* <form action="/api/register" method="post">
+  <label>EMail Address</label>
+  <input type="email" name="email" placeholder="Type your email"></input>
+  <label>Pasword</label>
+  <input
+    type="password"
+    name="password"
+    placeholder="Type your password"
+  ></input>
+  <input type="submit" value="Register"></input>
+</form> */
+}
 const StudentLoginForm = () => {
-  // REFS's
-  const USN = useRef();
-  const password = useRef();
-
-  // Authentication
-  async function Authenticate(e) {
-    e.preventDefault();
-
-    const userUSN = USN.current.value;
-    const userpswd = password.current.value;
-    const credentials = { userUSN, userpswd };
-    // if (authMe(userUSN, userpswd)) {
-    //   router.push("/profile");
-    // }
-    try {
-      const user = await axios.post("pages/api/login.js", credentials);
-      console.log(user);
-    } catch (e) {
-      console.log(e);
-    }
-  }
   return (
     <form
       className="bg-blue-400 flex w-screen h-screen"
-      onSubmit={Authenticate}
+      action="/api/login"
+      method="GET"
     >
       <div className="flex flex-1 p-5 flex-col items-center justify-center box-border ">
         <div className=" border-2 border-black bg-gray-700 justify-center items-center flex flex-col rounded-md space-y-2">
@@ -44,8 +36,9 @@ const StudentLoginForm = () => {
             height={100}
             priority
           />
-          <USNInput USNRef={USN} />
-          <PasswordInput passwordRef={password} />
+          <USNInput />
+          <EmailIdInput />
+          <PasswordInput />
           <SubmitButton />
         </div>
       </div>

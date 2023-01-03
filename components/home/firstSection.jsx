@@ -10,7 +10,11 @@ export function FirstSection({ laptopBG }) {
         <RightSideCards />
       </div>
       <div>
-        <Image src={laptopBG} className="rounded-lg w-auto h-auto" />
+        <Image
+          src={laptopBG}
+          className="rounded-lg w-auto h-auto"
+          alt="Laptop-BG"
+        />
       </div>
     </div>
   );
