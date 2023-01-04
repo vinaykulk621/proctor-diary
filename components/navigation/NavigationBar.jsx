@@ -2,7 +2,7 @@ import NavBar from "./NavBar";
 
 export function NavigationBar({}) {
   return (
-    <nav className="flex space-x-5 pt-10 text-[20px]">
+    <nav className="flex space-x-5 items-center text-[20px]">
       <NavBar href="/" children="Home" />
       <NavBar href="/facculty-login" children="Facculty-login" />
       <NavBar href="/student-login" children="Student-login" />

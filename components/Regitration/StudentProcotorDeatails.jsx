@@ -3,7 +3,7 @@ import { Tablets } from "../global/Tablet";
 import { ProfilePallete } from "../global/profilePallete";
 export function StudentProcotorDeatails({}) {
   return (
-    <div className="flex flex-row space-x-16 text-center pb-10 justify-evenly">
+    <div className="flex flex-row space-x-16 text-center pb-10 justify-evenly ">
       <div className="flex flex-col space-y-4">
         <Tablets content={"USN"} />
         <Tablets content={"Student Name"} />

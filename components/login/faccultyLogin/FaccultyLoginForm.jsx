@@ -19,11 +19,11 @@ const FaccultyLoginForm = () => {
 
   return (
     <form
-      className="bg-blue-400 flex w-screen h-screen z-0"
+      className="bg-yellow-400 flex w-screen h-screen z-0"
       onSubmit={submitHandler}
     >
       <div className="flex flex-1 p-5 flex-col items-center justify-center box-border">
-        <div className=" border-2 border-black bg-gray-700 justify-center items-center flex flex-col rounded-md">
+        <div className=" border-2 border-black bg-black justify-center items-center flex flex-col rounded-md">
           <Image
             src={logoWhiteFont}
             alt="chumma"

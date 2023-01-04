@@ -1,8 +1,11 @@
 import React from "react";
-export function Tablets({ content }) {
+export function Tablets({ content, label }) {
   return (
-    <p className="bg-slate-900 text-white text-3xl px-2 py-1 rounded-md">
-      {content}
-    </p>
+    <div className="flex flex-col">
+      <h1 className="text-2xl text-start text-black">{label}</h1>
+      <p className="bg-black text-white text-2xl px-2 py-1 rounded-md">
+        {content}
+      </p>
+    </div>
   );
 }

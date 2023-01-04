@@ -1,9 +1,15 @@
-// const { Schema, models, model } = require("mongoose");
+import mongoose from "mongoose";
 
-// const studentSchema = new Schema({
-//     usn: String,
-//     password: String
-// })
-// const students = models.student || model('student', studentSchema)
-
-// export default students
+const studentSchema = new mongoose.Schema({
+    name: String,
+    usn: String,
+    email: String,
+    contact: String,
+    bloodGroup: String,
+    dob: String,
+    admissionType: String,
+    localAddress: String,
+    permanentAddress: String,
+    personalEmail: String
+})
+module.exports = mongoose.models.Students || mongoose.model('Students', studentSchema)
