@@ -6,7 +6,7 @@ dbConnect()
 export default async function (req, res) {
     try {
         const { cookies } = req;
-        const token = cookies.OursiteJWT;
+        const token = cookies.ourSiteJwt;
         if (!token) {
             return res.json({ message: "Invalid token!" });
         }

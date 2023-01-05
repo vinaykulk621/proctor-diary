@@ -10,7 +10,6 @@ const USNInput = (props) => {
         className="ml-10 rounded-sm"
         id="USN"
         defaultValue={props.usn}
-        onChange={(e) => setUSN(e.target.value)}
       />
     </div>
   );

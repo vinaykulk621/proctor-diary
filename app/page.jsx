@@ -6,6 +6,7 @@ import Wrapper from "../components/global/Wrapper";
 import laptopBG from "../public/laptopBG.webp";
 
 export default function Home() {
+  const user = false;
   return (
     <Wrapper>
       <FirstSection laptopBG={laptopBG} />
