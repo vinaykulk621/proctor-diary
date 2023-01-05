@@ -1,5 +1,5 @@
-import dbConnect from "../../../utils/dbConnection";
-import Students from '../../../models/student'
+import dbConnect from "../../utils/dbConnection";
+import Students from '../../models/student'
 import jwt from 'jsonwebtoken';
 
 dbConnect()
@@ -13,8 +13,8 @@ export default async function (req, res) {
         const { email } = jwt.decode(token)
         const user = await Students.find({ email })
         if (user) {
-            const studentContact = user[0]['contact']
-            return res.json({ studentContact })
+            const student = user[0]
+            return res.json({ student })
         }
     } catch (e) {
         console.log(e);

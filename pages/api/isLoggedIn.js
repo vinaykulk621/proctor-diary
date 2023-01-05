@@ -1,7 +1,5 @@
 export default async function (req, res) {
-    const { cookies } = req;
-    const token = cookies.ourSiteJwt;
-    if (!token) {
+    if (!req.cookies.get('ourSiteJwt')) {
         return res.json({ message: false });
     }
     return res.json({ message: true });

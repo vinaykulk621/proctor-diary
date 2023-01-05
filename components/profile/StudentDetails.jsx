@@ -12,79 +12,23 @@ export function StudentDetails({}) {
   const [local, setLocal] = useState("");
   const [permanent, setPermanent] = useState("");
 
-  async function handleNumber() {
+  async function handleStudent() {
     try {
-      const res = await axios.get("/api/student/getContact");
-      setNumber(res["data"]["studentContact"]);
+      const res = await axios.get("/api/getStudent");
+      console.log(res["data"]["student"]);
+      setNumber(res["data"]["student"]["contact"]);
+      setEmail(res["data"]["student"]["email"]);
+      setPersonalEmail(res["data"]["student"]["personalEmail"]);
+      setDob(res["data"]["student"]["dob"]);
+      setBlood(res["data"]["student"]["bloodGroup"]);
+      setAddmission(res["data"]["student"]["admissionType"]);
+      setLocal(res["data"]["student"]["localAddress"]);
+      setPermanent(res["data"]["student"]["permanentAddress"]);
     } catch (e) {
       console.log(e);
     }
   }
-  async function handleEmail() {
-    try {
-      const res = await axios.get("/api/student/getEmail");
-      setEmail(res["data"]["studentEmail"]);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  async function handlePersonalEmail() {
-    try {
-      const res = await axios.get("/api/student/getPersonalEmail");
-      setPersonalEmail(res["data"]["studentPersonalEmail"]);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  async function handleDob() {
-    try {
-      const res = await axios.get("/api/student/getDob");
-      setDob(res["data"]["studentDob"]);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  async function handleBlood() {
-    try {
-      const res = await axios.get("/api/student/getBlood");
-      setBlood(res["data"]["studentBlood"]);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  async function handleAdmission() {
-    try {
-      const res = await axios.get("/api/student/getAdmission");
-      setAddmission(res["data"]["studentAdmission"]);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  async function handleLocal() {
-    try {
-      const res = await axios.get("/api/student/getLocal");
-      setLocal(res["data"]["studentLocal"]);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  async function handlePermanent() {
-    try {
-      const res = await axios.get("/api/student/getPermanent");
-      setPermanent(res["data"]["studentPermanent"]);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  handleNumber();
-  handleEmail();
-  handlePersonalEmail();
-  handleDob();
-  handleBlood();
-  handleAdmission();
-  handleLocal();
-  handlePermanent();
+  handleStudent();
 
   return (
     <div className="flex flex-col space-y-10 text-center">

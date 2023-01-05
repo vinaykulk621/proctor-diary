@@ -5,7 +5,7 @@ export async function NavigationBar({}) {
   async function handle(loggedIn) {
     return (loggedIn = await fetch("/api/isLoggedIn"));
   }
-  loggedIn = handle(loggedIn);
+  loggedIn = false;
   return (
     <nav className="flex space-x-5 items-center text-[20px]">
       <NavBar href="/" children="Home" />

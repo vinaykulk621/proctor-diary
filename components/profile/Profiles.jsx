@@ -2,13 +2,14 @@
 import axios from "axios";
 import { useState } from "react";
 import { ProfilePalleteWithNames } from "./ProfilePalleteWithNames";
+
 export function Profiles({}) {
   const [studentName, setStudentName] = useState("");
 
   async function handleName() {
     try {
-      const res = await axios.get("/api/student/getName");
-      setStudentName(res["data"]["studentName"]);
+      const res = await axios.get("/api/getStudent");
+      setStudentName(res["data"]["student"]["name"]);
     } catch (e) {
       console.log(e);
     }
