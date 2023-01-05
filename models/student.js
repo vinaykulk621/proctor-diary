@@ -10,6 +10,9 @@ const studentSchema = new mongoose.Schema({
     admissionType: String,
     localAddress: String,
     permanentAddress: String,
-    personalEmail: String
+    personalEmail: String,
+    semester: String,
+    department: String,
+    section: String
 })
 module.exports = mongoose.models.Students || mongoose.model('Students', studentSchema)
