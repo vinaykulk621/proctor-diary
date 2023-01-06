@@ -2,58 +2,234 @@
   "semester-3": {
     "_id": { "$oid": "63b70988fe6935b9b279a5bc" },
     "semester": "3",
-    "branch": "CSE",
-    "subjects": {
-      "19MA3BSSDM": "Statistics and Discrete Mathematics",
-      "19CS3ESMMC": "Microprocessors and Microcontrollers ",
-      "19CS3PCOOJ": "Object Oriented Java Programming",
-      "19CS3PCDST": "Data Structures",
-      "19CS3PCCOA": "Computer Organization and Architecture",
-      "19CS3PCLOD": "Logic Design",
-      "19IC3HSCPH": "Constitution of India, Professional Ethics and Human Rights",
-      "19CS3PWPW1": "Project Work-1",
-      "19CS3NCNC3": "Physical Activity (Sports/ Yoga Etc.) "
-    }
+    "department": "CSE",
+    "subjects": [
+      {
+        "courseCode": "19MA3BSSDM",
+        "courseName": "Statistics and Discrete Mathematics",
+        "credits": 4,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS3ESMMC",
+        "courseName": "Microprocessors and Microcontrollers",
+        "credits": 4,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS3PCOOJ",
+        "courseName": "Object Oriented Java Programming",
+        "credits": 4,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS3PCDST",
+        "courseName": "Data Structures",
+        "credits": 4,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS3PCCOA",
+        "courseName": "Computer Organization and Architecture",
+        "credits": 3,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS3PCLOD",
+        "courseName": "Logic Design",
+        "credits": 3,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19IC3HSCPH",
+        "courseName": "Constitution of India, Professional Ethics and Human Rights",
+        "credits": 1,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS3PWPW1",
+        "courseName": "Project Work-1",
+        "credits": 2,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS3NCNC3",
+        "courseName": "Physical Activity (Sports/ Yoga Etc.)",
+        "credits": 0,
+        "attempt": 1,
+        "type": "core"
+      }
+    ]
   },
   "semester-4": {
     "_id": { "$oid": "63b78738a906c90aec504ed7" },
     "semester": "4",
-    "branch": "CSE",
-    "subjects": {
-      "19MA4BSLIA": "Linear Algebra",
-      "19CS4PCTFC": "Theoretical Foundations of Computations",
-      "19CS4PCDBM": "Database Management Systems ",
-      "19CS4PCADA": "Analysis and Design of Algorithms ",
-      "19CS4PCOPS": "Operating Systems ",
-      "19CS4SRSTI": "Seminar Technical / Internship",
-      "19CS4PWPW2": "Project Work-2 ",
-      "19CS4NCNC4": "Cultural Activity (Music/Dance etc.)"
-    }
+    "department": "CSE",
+    "subjects": [
+      {
+        "courseCode": "19MA4BSLIA",
+        "courseName": "Linear Algebra",
+        "credits": 4,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS4PCTFC",
+        "courseName": "Theoretical Foundations of Computations",
+        "credits": 4,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS4PCDBM",
+        "courseName": "Database Management Systems",
+        "credits": 4,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS4PCADA",
+        "courseName": "Analysis and Design of Algorithms",
+        "credits": 4,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS4PCOPS",
+        "courseName": "Operating Systems",
+        "credits": 4,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS4SRSTI",
+        "courseName": "Seminar Technical / Internship",
+        "credits": 1,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS4PWPW2",
+        "courseName": "Project Work-2",
+        "credits": 2,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "19CS4NCNC4",
+        "courseName": "Cultural Activity (Music/Dance etc.)",
+        "credits": 0,
+        "attempt": 1,
+        "type": "core"
+      }
+    ]
   },
   "semester-5": {
     "_id": { "$oid": "63b78aeca906c90aec504ed8" },
     "semester": "5",
-    "branch": "CSE",
-    "subjects": {
-      "20CS5PCAIP": "Artificial Intelligence",
-      "20CS5PCCON": "Computer Networks",
-      "20CS5PCUSP": "Unix Shell and System Programming",
-      "20CS5PCSEG": "Software Engineering",
-      "20CS5HSSPM": "Software Project Management and Finance",
-      "electives": {
-        "elective-1": {
-          "20CS5PEIOT": "Internet of Things",
-          "20CS5PEAJJ": "Advanced Java and J2EE",
-          "20CS5PEADS": "Advanced Data Structures"
-        },
-        "elective-2": {
-          "20CS5PEAAG": "Advanced Algorithms",
-          "20CS5PESCD": "System Software and Compiler Design",
-          "20CS5PEACA": "Advanced Computer Architecture"
-        }
+    "department": "CSE",
+    "subjects": [
+      {
+        "courseCode": "20CS5PCAIP",
+        "courseName": "Artificial Intelligence",
+        "credits": 4,
+        "attempt": 1,
+        "type": "core"
       },
-      "20CS5PWPW3": "Project Work-3",
-      "20CS5NCNC5": "Making Videos with Social message"
-    }
+      {
+        "courseCode": "20CS5PCCON",
+        "courseName": "Computer Networks",
+        "credits": 4,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "20CS5PCUSP",
+        "courseName": "Unix Shell and System Programming",
+        "credits": 4,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "20CS5PCSEG",
+        "courseName": "Software Engineering",
+        "credits": 3,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "20CS5HSSPM",
+        "courseName": "Software Project Management and Finance",
+        "credits": 2,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "20CS5PEIOT",
+        "courseName": "Internet of Things",
+        "credits": 3,
+        "attempt": 1,
+        "type": "elective-1"
+      },
+      {
+        "courseCode": "20CS5PEAJJ",
+        "courseName": "Advanced Java and J2EE",
+        "credits": 3,
+        "attempt": 1,
+        "type": "elective-1"
+      },
+      {
+        "courseCode": "20CS5PEADS",
+        "courseName": "Advanced Data Structures",
+        "credits": 3,
+        "attempt": 1,
+        "type": "elective-1",
+        "electedCourse": true
+      },
+      {
+        "courseCode": "20CS5PEAAG",
+        "courseName": "Advanced Algorithms",
+        "credits": 3,
+        "attempt": 1,
+        "type": "elective-2",
+        "electedCourse": true
+      },
+      {
+        "courseCode": "20CS5PESCD",
+        "courseName": "System Software and Compiler Design",
+        "credits": 3,
+        "attempt": 1,
+        "type": "elective-2"
+      },
+      {
+        "courseCode": "20CS5PEACA",
+        "courseName": "Advanced Computer Architecture",
+        "credits": 3,
+        "attempt": 1,
+        "type": "elective-2"
+      },
+      {
+        "courseCode": "20CS5PWPW3",
+        "courseName": "Project Work-3",
+        "credits": 2,
+        "attempt": 1,
+        "type": "core"
+      },
+      {
+        "courseCode": "20CS5NCNC5",
+        "courseName": "Making Videos with Social message",
+        "credits": 0,
+        "attempt": 1,
+        "type": "core"
+      }
+    ]
   }
 }

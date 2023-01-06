@@ -7,7 +7,6 @@ import "./globals.css";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head />
       <body className="overflow-x-hidden">
         {/* Navigation Links */}
         <header className="flex top-0 bg-black text-white w-screen m-auto flex-row justify-around fixed">
@@ -24,7 +23,6 @@ export default function RootLayout({ children }) {
             <Image
               src={profile}
               alt="profilePicture"
-              priority
               className="rounded-full w-16 h-16 "
             />
           </div>

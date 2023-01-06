@@ -14,7 +14,7 @@ export function StudentProcotorDeatails({}) {
   const [section, setSection] = useState("");
   async function handleStudent() {
     try {
-      const res = await axios.get("/api/getStudent");
+      const res = await axios.get("http://localhost:3000/api/getStudent");
       setNumber(res["data"]["student"]["contact"]);
       setStudentName(res["data"]["student"]["name"]);
       setUSN(res["data"]["student"]["usn"]);

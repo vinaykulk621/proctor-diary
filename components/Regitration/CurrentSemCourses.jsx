@@ -3,81 +3,93 @@ export function CurrentSemCourses({}) {
   return (
     <>
       <h1 className="text-3xl p-5">Curresnt Semester</h1>
-      <table className="table-fixed text-justify ml-5 mr-5">
-        <thead>
-          <tr className="border-2 border-solid border-l-0 border-r-0 border-t-0 border-yellow-400">
-            <th>S no.</th>
-            <th>Course Code</th>
-            <th>Course Title</th>
-            <th>Type</th>
-            <th>Atempts</th>
-            <th>Credits</th>
+      <table className="table-auto w-screen">
+        <thead className="border-b border-slate-600">
+          <tr>
+            <th className="border-r border-slate-600 p-2">S no.</th>
+            <th className="border-r border-slate-600 p-2">Course Code</th>
+            <th className="border-r border-slate-600 p-2">Course Title</th>
+            <th className="border-r border-slate-600 p-2">Type</th>
+            <th className="border-r border-slate-600 p-2">Atempts</th>
+            <th className="border-r border-slate-600 p-2">Credits</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-justify">
           <tr>
-            1.
-            <td>20CS5PCAIP</td>
-            <td>Artificial Intelligence</td>
-            <td>Core</td>
-            <td>1</td>
-            <td>04</td>
+            <td className="border-r border-slate-600 p-2"> 1.</td>
+            <td className="border-r border-slate-600 p-2">20CS5PCAIP</td>
+            <td className="border-r border-slate-600 p-2">
+              Artificial Intelligence
+            </td>
+            <td className="border-r border-slate-600 p-2">Core</td>
+            <td className="border-r border-slate-600 p-2">1</td>
+            <td className="border-r border-slate-600 p-2">04</td>
           </tr>
           <tr>
-            2.
-            <td>20CS5PCCON</td>
-            <td>Computer Networks</td>
-            <td>Core</td>
-            <td>1</td>
-            <td>04</td>
+            <td className="border-r border-slate-600 p-2"> 2.</td>
+            <td className="border-r border-slate-600 p-2">20CS5PCCON</td>
+            <td className="border-r border-slate-600 p-2">Computer Networks</td>
+            <td className="border-r border-slate-600 p-2">Core</td>
+            <td className="border-r border-slate-600 p-2">1</td>
+            <td className="border-r border-slate-600 p-2">04</td>
           </tr>
           <tr>
-            3.
-            <td>20CS5PCUSP</td>
-            <td>Unix Shell and System Programming</td>
-            <td>Core</td>
-            <td>1</td>
-            <td>04</td>
+            <td className="border-r border-slate-600 p-2"> 3.</td>
+            <td className="border-r border-slate-600 p-2">20CS5PCUSP</td>
+            <td className="border-r border-slate-600 p-2">
+              Unix Shell and System Programming
+            </td>
+            <td className="border-r border-slate-600 p-2">Core</td>
+            <td className="border-r border-slate-600 p-2">1</td>
+            <td className="border-r border-slate-600 p-2">04</td>
           </tr>
           <tr>
-            4.
-            <td>20CS5PCSEG</td>
-            <td>Software Engineering </td>
-            <td>Core</td>
-            <td>1</td>
-            <td>04</td>
+            <td className="border-r border-slate-600 p-2"> 4.</td>
+            <td className="border-r border-slate-600 p-2">20CS5PCSEG</td>
+            <td className="border-r border-slate-600 p-2">
+              Software Engineering{" "}
+            </td>
+            <td className="border-r border-slate-600 p-2">Core</td>
+            <td className="border-r border-slate-600 p-2">1</td>
+            <td className="border-r border-slate-600 p-2">04</td>
           </tr>
           <tr>
-            5.
-            <td>22CS5HSSPM</td>
-            <td>Software Project Management and Finance</td>
-            <td>Core</td>
-            <td>1</td>
-            <td>04</td>
+            <td className="border-r border-slate-600 p-2"> 5.</td>
+            <td className="border-r border-slate-600 p-2">22CS5HSSPM</td>
+            <td className="border-r border-slate-600 p-2">
+              Software Project Management and Finance
+            </td>
+            <td className="border-r border-slate-600 p-2">Core</td>
+            <td className="border-r border-slate-600 p-2">1</td>
+            <td className="border-r border-slate-600 p-2">04</td>
           </tr>
           <tr>
-            6.
-            <td>20CS5PEADS</td>
-            <td>Advanced Data Structures</td>
-            <td>Elective</td>
-            <td>1</td>
-            <td>04</td>
+            <td className="border-r border-slate-600 p-2"> 6.</td>
+            <td className="border-r border-slate-600 p-2">20CS5PEADS</td>
+            <td className="border-r border-slate-600 p-2">
+              Advanced Data Structures
+            </td>
+            <td className="border-r border-slate-600 p-2">Elective</td>
+            <td className="border-r border-slate-600 p-2">1</td>
+            <td className="border-r border-slate-600 p-2">04</td>
           </tr>
           <tr>
-            7.
-            <td>20CS5PEAAG</td>
-            <td>Advanced Algorithms</td>
-            <td>Elective</td>
-            <td>1</td>
-            <td>04</td>
+            <td className="border-r border-slate-600 p-2"> 7.</td>
+            <td className="border-r border-slate-600 p-2">20CS5PEAAG</td>
+            <td className="border-r border-slate-600 p-2">
+              Advanced Algorithms
+            </td>
+            <td className="border-r border-slate-600 p-2">Elective</td>
+            <td className="border-r border-slate-600 p-2">1</td>
+            <td className="border-r border-slate-600 p-2">04</td>
           </tr>
           <tr>
-            8.
-            <td>20CS5PWPW3</td>
-            <td>Project Work-3</td>
-            <td>Core</td>
-            <td>1</td>
-            <td>04</td>
+            <td className="border-r border-slate-600 p-2"> 8.</td>
+            <td className="border-r border-slate-600 p-2">20CS5PWPW3</td>
+            <td className="border-r border-slate-600 p-2">Project Work-3</td>
+            <td className="border-r border-slate-600 p-2">Core</td>
+            <td className="border-r border-slate-600 p-2">1</td>
+            <td className="border-r border-slate-600 p-2">04</td>
           </tr>
         </tbody>
       </table>

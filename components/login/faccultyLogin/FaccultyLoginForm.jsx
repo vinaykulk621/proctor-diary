@@ -9,14 +9,6 @@ import logoWhiteFont from "../../../public/logoWhiteFont.png";
 export default function FaccultyLoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-
-    console.log(email.current.value);
-    console.log(password.current.value);
-  };
-
   return (
     <form className="bg-yellow-400 flex w-screen h-screen">
       <div className="flex flex-1 p-5 flex-col items-center justify-center box-border ">

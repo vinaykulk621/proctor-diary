@@ -1,5 +1,5 @@
 import dbConnect from "../../utils/dbConnection";
-import Students from '../../models/student'
+import student from '../../models/student'
 import jwt from 'jsonwebtoken';
 
 dbConnect()
@@ -11,7 +11,7 @@ export default async function (req, res) {
             return res.json({ message: "Invalid token!" });
         }
         const { email } = jwt.decode(token)
-        const user = await Students.find({ email })
+        const user = await student.find({ email })
         if (user) {
             const student = user[0]
             return res.json({ student })
@@ -19,5 +19,4 @@ export default async function (req, res) {
     } catch (e) {
         console.log(e);
     }
-    return res.json({ "mess": "dail" })
 }

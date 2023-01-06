@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const studentSchema = new mongoose.Schema({
+const StudentSchema = new mongoose.Schema({
     name: String,
     usn: String,
     email: String,
@@ -15,4 +15,4 @@ const studentSchema = new mongoose.Schema({
     department: String,
     section: String
 })
-module.exports = mongoose.models.Students || mongoose.model('Students', studentSchema)
+module.exports = mongoose.models.student || mongoose.model('student', StudentSchema)

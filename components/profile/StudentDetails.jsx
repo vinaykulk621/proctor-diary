@@ -3,7 +3,6 @@ import axios from "axios";
 import { useState } from "react";
 import { Tablets } from "../global/Tablet";
 
-
 export function StudentDetails({}) {
   const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
@@ -16,7 +15,7 @@ export function StudentDetails({}) {
 
   async function handleStudent() {
     try {
-      const res = await axios.get("/api/getStudent");
+      const res = await axios.get("http://localhost:3000/api/getStudent");
       setNumber(res["data"]["student"]["contact"]);
       setEmail(res["data"]["student"]["email"]);
       setPersonalEmail(res["data"]["student"]["personalEmail"]);
