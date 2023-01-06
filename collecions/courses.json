@@ -1,0 +1,59 @@
+{
+  "semester-3": {
+    "_id": { "$oid": "63b70988fe6935b9b279a5bc" },
+    "semester": "3",
+    "branch": "CSE",
+    "subjects": {
+      "19MA3BSSDM": "Statistics and Discrete Mathematics",
+      "19CS3ESMMC": "Microprocessors and Microcontrollers ",
+      "19CS3PCOOJ": "Object Oriented Java Programming",
+      "19CS3PCDST": "Data Structures",
+      "19CS3PCCOA": "Computer Organization and Architecture",
+      "19CS3PCLOD": "Logic Design",
+      "19IC3HSCPH": "Constitution of India, Professional Ethics and Human Rights",
+      "19CS3PWPW1": "Project Work-1",
+      "19CS3NCNC3": "Physical Activity (Sports/ Yoga Etc.) "
+    }
+  },
+  "semester-4": {
+    "_id": { "$oid": "63b78738a906c90aec504ed7" },
+    "semester": "4",
+    "branch": "CSE",
+    "subjects": {
+      "19MA4BSLIA": "Linear Algebra",
+      "19CS4PCTFC": "Theoretical Foundations of Computations",
+      "19CS4PCDBM": "Database Management Systems ",
+      "19CS4PCADA": "Analysis and Design of Algorithms ",
+      "19CS4PCOPS": "Operating Systems ",
+      "19CS4SRSTI": "Seminar Technical / Internship",
+      "19CS4PWPW2": "Project Work-2 ",
+      "19CS4NCNC4": "Cultural Activity (Music/Dance etc.)"
+    }
+  },
+  "semester-5": {
+    "_id": { "$oid": "63b78aeca906c90aec504ed8" },
+    "semester": "5",
+    "branch": "CSE",
+    "subjects": {
+      "20CS5PCAIP": "Artificial Intelligence",
+      "20CS5PCCON": "Computer Networks",
+      "20CS5PCUSP": "Unix Shell and System Programming",
+      "20CS5PCSEG": "Software Engineering",
+      "20CS5HSSPM": "Software Project Management and Finance",
+      "electives": {
+        "elective-1": {
+          "20CS5PEIOT": "Internet of Things",
+          "20CS5PEAJJ": "Advanced Java and J2EE",
+          "20CS5PEADS": "Advanced Data Structures"
+        },
+        "elective-2": {
+          "20CS5PEAAG": "Advanced Algorithms",
+          "20CS5PESCD": "System Software and Compiler Design",
+          "20CS5PEACA": "Advanced Computer Architecture"
+        }
+      },
+      "20CS5PWPW3": "Project Work-3",
+      "20CS5NCNC5": "Making Videos with Social message"
+    }
+  }
+}
