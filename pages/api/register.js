@@ -1,7 +1,7 @@
 import dbConnect from "../utils/dbConnection";
 import User from '../models/user'
 
-dbConnect()
+const db = dbConnect()
 
 export default async function handler(req, res) {
     try {

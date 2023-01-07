@@ -1,6 +1,6 @@
 import React from "react";
 import CustomInput from "../global/customInput";
-export function FormInputs({}) {
+export function FormInputs({ ...props }) {
   return (
     <div className="border-2 border-black bg-gray-700 flex flex-col rounded-md space-y-1">
       <div className="flex flex-row">

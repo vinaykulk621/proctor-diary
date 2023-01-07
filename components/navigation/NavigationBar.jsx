@@ -1,4 +1,3 @@
-import axios from "axios";
 import NavBar from "./NavBar";
 
 export async function NavigationBar({}) {
