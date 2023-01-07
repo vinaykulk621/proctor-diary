@@ -1,22 +1,22 @@
 import dbConnect from "../../utils/dbConnection";
-import activityPoint from '../../models/activityPoints'
 
-dbConnect()
 export default async function (req, res) {
-    const { usn, name, activity, location, date, hours } = req.body;
+    const { usn, name, activityName, location, date, duration } = req.body;
+    console.log(usn, name, activityName, location, date, duration);
+    const { db } = await dbConnect()
     try {
         console.log("ho raha hai");
         const data = {
             usn: usn,
             name: name,
-            activityName: activity,
+            activityName: activityName,
             location: location,
             date: date,
-            duration: hours,
+            duration: duration,
             activityPoints: 1,
             status: "pending",
         }
-        const res = await activityPoint.insertOne(data)
+        const res = await db.collection("activityPoints").insertOne(data)
         console.log(res);
         console.log("hogaya");
         res.json({ message: "success" })

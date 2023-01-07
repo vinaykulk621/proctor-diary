@@ -1,14 +1,13 @@
 import { sign } from "jsonwebtoken";
 import { serialize } from "cookie";
 import dbConnect from "../../utils/dbConnection";
-import User from '../../models/user'
 
 const secret = process.env.SECRET;
 
-dbConnect()
+const { db } = await dbConnect()
 export default async function (req, res) {
     const { email, password } = req.body;
-    const user = await User.find({ email, password })
+    const user = await db.collection("users").find({ email, password })
     if (!user) {
         return res.json({ status: 'Not able to find the user' })
     } else {

@@ -1,11 +1,11 @@
 import dbConnect from "../utils/dbConnection";
 import User from '../models/user'
 
-const db = dbConnect()
 
 export default async function handler(req, res) {
+    const { db } = await dbConnect()
     try {
-        const user = await User.create(req.body);
+        const user = await db.collection("users").create(req.body);
         res.redirect('/')
         if (!user) {
             return res.json({ "code": 'User not created' })

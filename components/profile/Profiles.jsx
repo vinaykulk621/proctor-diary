@@ -8,7 +8,7 @@ export function Profiles({}) {
 
   async function handleName() {
     try {
-      const res = await axios.get("/api/getStudent");
+      const res = await fetch("/api/getStudent");
       setStudentName(res["data"]["student"]["name"]);
     } catch (e) {
       console.log(e);

@@ -1,9 +1,8 @@
 import dbConnect from "../../utils/dbConnection";
-import student from '../../models/student'
 import jwt from 'jsonwebtoken';
 
-dbConnect()
 export default async function (req, res) {
+    const { db } = await dbConnect()
     try {
         const { cookies } = req;
         const token = cookies.ourSiteJwt;
@@ -11,7 +10,7 @@ export default async function (req, res) {
             return res.json({ message: "Invalid token!" });
         }
         const { email } = jwt.decode(token)
-        const user = await student.find({ email })
+        const user = await db.collection("students").find({ email })
         if (user) {
             const student = user[0]
             return res.json({ student })
