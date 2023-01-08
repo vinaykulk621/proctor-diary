@@ -1,5 +1,4 @@
 "use client";
-import { SubmitButton } from "../utils/SubmitButton";
 import { PasswordInput } from "../utils/PasswordInput";
 import { useState } from "react";
 import Image from "next/image";
@@ -38,7 +37,12 @@ export default function StudentLoginForm() {
           <USNInput usn={usn} />
           <EmailIdInput email={email} setEmail={setEmail} />
           <PasswordInput password={password} setPassword={setPassword} />
-          <SubmitButton />
+          <button
+            type="submit"
+            className="bg-green-400 w-16 items-center text-center rounded-sm"
+          >
+            Login
+          </button>
         </div>
       </div>
     </form>

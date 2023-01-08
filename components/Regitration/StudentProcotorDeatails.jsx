@@ -15,6 +15,7 @@ export function StudentProcotorDeatails({}) {
     try {
       const res = await fetch("/api/getStudent");
       const ans = await res.json();
+      console.log(ans);
       setNumber(ans["contact"]);
       setStudentName(ans["name"]);
       setUSN(ans["usn"]);

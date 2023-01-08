@@ -23,9 +23,9 @@ export async function CurrentSemCourses({}) {
           </tr>
         </thead>
         <tbody className="text-justify">
-          {courses["subjects"].map((e) => {
+          {courses["subjects"].map((e, i) => {
             return (
-              <tr>
+              <tr key={i}>
                 <td className="border-r border-slate-600 p-2">
                   {e.courseCode}
                 </td>
@@ -33,7 +33,7 @@ export async function CurrentSemCourses({}) {
                   {e.courseName}
                 </td>
                 {e.electedCourse ? (
-                  <td className="border-r border-slate-600 p-2 text-red-600 font-bold text-lg">
+                  <td className="border-r border-slate-600 p-2 text-green-600 font-bold text-lg">
                     {e.type}
                   </td>
                 ) : (

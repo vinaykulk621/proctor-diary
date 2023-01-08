@@ -14,26 +14,23 @@ export default function Home() {
 
   const handle = async (e) => {
     e.preventDefault();
-    console.log(data);
-
     try {
       const response = await fetch("/api/putActivity", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({
           usn: e.target.USN.value,
-          StudentName: e.target.StudentName.value,
+          studentName: e.target.StudentName.value,
           activityName: e.target.ActivityName.value,
           location: e.target.Location.value,
           date: e.target.Date.value,
-          hours: e.target.numberOfHoursWorked.value,
+          duration: e.target.numberOfHoursWorked.value,
         }),
       });
-      const result = await response.json();
-      console.log(result);
     } catch (e) {
       console.log(e);
     }
+    window.location.reload();
   };
 
   return (

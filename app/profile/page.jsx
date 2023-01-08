@@ -5,7 +5,7 @@ import Wrapper from "../../components/global/Wrapper";
 export default function Home() {
   return (
     <Wrapper>
-      <div className="bg-yellow-400 h-screen ">
+      <div className="bg-yellow-400 h-screen">
         {/* two main divs for left and right part of the page */}
         <div className="flex flex-row justify-evenly flex-1 space-y-8">
           <Profiles />

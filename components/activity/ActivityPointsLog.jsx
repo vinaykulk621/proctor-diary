@@ -31,9 +31,7 @@ export function ActivityPointsLog({}) {
               <td className="border-r border-slate-600 p-2">{e.location}</td>
               <td className="border-r border-slate-600 p-2">{e.date}</td>
               <td className="border-r border-slate-600 p-2">{e.duration}</td>
-              <td className="border-r border-slate-600 p-2">
-                {e.activityPoints}
-              </td>
+              <td className="border-r border-slate-600 p-2">{e.points}</td>
               {e.status === "pending" ? (
                 <td className="border-r-0 border-slate-600 p-2 text-red-600">
                   {e.status}
