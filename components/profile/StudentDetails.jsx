@@ -15,14 +15,15 @@ export function StudentDetails({}) {
   async function handleStudent() {
     try {
       const res = await fetch("/api/getStudent");
-      setNumber(res["data"]["student"]["contact"]);
-      setEmail(res["data"]["student"]["email"]);
-      setPersonalEmail(res["data"]["student"]["personalEmail"]);
-      setDob(res["data"]["student"]["dob"]);
-      setBlood(res["data"]["student"]["bloodGroup"]);
-      setAddmission(res["data"]["student"]["admissionType"]);
-      setLocal(res["data"]["student"]["localAddress"]);
-      setPermanent(res["data"]["student"]["permanentAddress"]);
+      const ans = await res.json();
+      setNumber(ans["contact"]);
+      setEmail(ans["email"]);
+      setPersonalEmail(ans["personalEmail"]);
+      setDob(ans["dob"]);
+      setBlood(ans["bloodGroup"]);
+      setAddmission(ans["admissionType"]);
+      setLocal(ans["localAddress"]);
+      setPermanent(ans["permanentAddress"]);
     } catch (e) {
       console.log(e);
     }

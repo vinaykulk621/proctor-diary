@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Tablets } from "../global/Tablet";
 import { ProfilePallete } from "../global/profilePallete";
-import axios from "axios";
 
 export function StudentProcotorDeatails({}) {
   const [usn, setUSN] = useState("");
@@ -15,13 +14,14 @@ export function StudentProcotorDeatails({}) {
   async function handleStudent() {
     try {
       const res = await fetch("/api/getStudent");
-      setNumber(res["data"]["student"]["contact"]);
-      setStudentName(res["data"]["student"]["name"]);
-      setUSN(res["data"]["student"]["usn"]);
-      setEmail(res["data"]["student"]["email"]);
-      setDepartment(res["data"]["student"]["department"]);
-      setSemester(res["data"]["student"]["semester"]);
-      setSection(res["data"]["student"]["section"]);
+      const ans = await res.json();
+      setNumber(ans["contact"]);
+      setStudentName(ans["name"]);
+      setUSN(ans["usn"]);
+      setEmail(ans["email"]);
+      setDepartment(ans["department"]);
+      setSemester(ans["semester"]);
+      setSection(ans["section"]);
     } catch (e) {
       console.log(e);
     }

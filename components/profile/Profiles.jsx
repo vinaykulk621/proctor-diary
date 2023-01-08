@@ -1,5 +1,4 @@
 "use client";
-import axios from "axios";
 import { useState } from "react";
 import { ProfilePalleteWithNames } from "./ProfilePalleteWithNames";
 
@@ -9,7 +8,8 @@ export function Profiles({}) {
   async function handleName() {
     try {
       const res = await fetch("/api/getStudent");
-      setStudentName(res["data"]["student"]["name"]);
+      const ans = await res.json();
+      setStudentName(ans["name"]);
     } catch (e) {
       console.log(e);
     }

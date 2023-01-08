@@ -1,43 +1,51 @@
-import React from "react";
+import { use } from "react";
+async function handler() {
+  try {
+    const res = await fetch("http://localhost:3000/api/getAllActivity");
+    return await res.json();
+  } catch (e) {
+    console.log(e);
+  }
+}
 export function ActivityPointsLog({}) {
+  const activity = use(handler());
   return (
-    <table className="table-fixed w-screen">
+    <table className="table-fixed w-auto ml-20 mr-20">
       <thead className="border-b border-slate-600">
         <tr>
-          <th className="border-r border-slate-600 p-2">S.no</th>
           <th className="border-r border-slate-600 p-2">Activity-Name</th>
           <th className="border-r border-slate-600 p-2">Location</th>
           <th className="border-r border-slate-600 p-2">Date</th>
           <th className="border-r border-slate-600 p-2">Duration(Hrs)</th>
           <th className="border-r border-slate-600 p-2">Activity-Points</th>
-          <th className="border-r border-slate-600 p-2">Status</th>
+          <th className="border-r-0 border-slate-600 p-2">Status</th>
         </tr>
       </thead>
-      <tbody className="text-center">
-        <tr>
-          <td className="border-r border-slate-600 p-2">1.</td>
-          <td className="border-r border-slate-600 p-2">Painting</td>
-          <td className="border-r border-slate-600 p-2">BMS-Hostel Mess</td>
-          <td className="border-r border-slate-600 p-2">10-07-2022</td>
-          <td className="border-r border-slate-600 p-2">4</td>
-          <td className="border-r border-slate-600 p-2">1</td>
-          <td className="text-green-500 border-r border-slate-600 p-2">
-            Aproved
-          </td>
-        </tr>
-        <tr>
-          <td className="border-r border-slate-600 p-2">2.</td>
-          <td className="border-r border-slate-600 p-2">Plantation-Drive</td>
-          <td className="border-r border-slate-600 p-2">
-            Dayanand-Sagar College of Medical Science
-          </td>
-          <td className="border-r border-slate-600 p-2">11-07-2022</td>
-          <td className="border-r border-slate-600 p-2">4</td>
-          <td className="border-r border-slate-600 p-2">1</td>
-          <td className="text-red-500 border-r border-slate-600 p-2">
-            Pending
-          </td>
-        </tr>
+      <tbody className="text-justify">
+        {activity.map((e, i) => {
+          return (
+            <tr key={i}>
+              <td className="border-r border-slate-600 p-2">
+                {e.activityName}
+              </td>
+              <td className="border-r border-slate-600 p-2">{e.location}</td>
+              <td className="border-r border-slate-600 p-2">{e.date}</td>
+              <td className="border-r border-slate-600 p-2">{e.duration}</td>
+              <td className="border-r border-slate-600 p-2">
+                {e.activityPoints}
+              </td>
+              {e.status === "pending" ? (
+                <td className="border-r-0 border-slate-600 p-2 text-red-600">
+                  {e.status}
+                </td>
+              ) : (
+                <td className="border-r-0 border-slate-600 p-2 text-green-600">
+                  {e.status}
+                </td>
+              )}
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );

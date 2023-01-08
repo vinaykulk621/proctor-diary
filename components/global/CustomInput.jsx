@@ -9,9 +9,18 @@ const CustomInput = ({ type = "text", name, label, val, change }) => {
           type={type}
           name={name}
           className="rounded-sm"
-          defaultValue={val}
           id={name}
           onChange={(e) => change(e.target.value)}
+          required
+        />
+      ) : type == "file" ? (
+        <input
+          type={type}
+          name={name}
+          className="rounded-sm"
+          id={name}
+          // onChange={(e) => change(e.target.value)}
+          required
         />
       ) : (
         <input
@@ -19,8 +28,8 @@ const CustomInput = ({ type = "text", name, label, val, change }) => {
           name={name}
           className="rounded-sm"
           id={name}
-          defaultValue={val}
-          onChange={(e) => change(e.target.value)}
+          // onChange={(e) => change(e.target.value)}
+          required
         />
       )}
     </div>
