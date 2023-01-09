@@ -6,11 +6,30 @@ import dbConnect from "../../utils/dbConnection";
 export default async function (req, res) {
     const secret = process.env.SECRET;
     const { db } = await dbConnect()
-    const { email, password } = req.body;
-    console.log({ email, password });
+    const { usn, email, password } = req.body;
+    console.log({ usn, email, password });
     try {
         const user = await db.collection("users").find({
-            email: email,
+            $and: [
+                {
+                    email:
+                    {
+                        $eq: email
+                    },
+                },
+                {
+                    password:
+                    {
+                        $eq: password
+                    }
+                },
+                {
+                    usn:
+                    {
+                        $eq: usn
+                    }
+                }
+            ]
         })
         if (!user) {
             return res.json({ err: true })
@@ -22,24 +41,23 @@ export default async function (req, res) {
                 },
                 secret
             );
-            const serialised = serialize("ourSiteJwt", token, {
+            console.log("hogaya token" + token);
+            res.setHeader("Set-Cookie", serialize("ourSiteJwt", token, {
                 httpOnly: true,
                 secure: process.env.NODE_ENV !== "development",
                 sameSite: "strict",
                 maxAge: 60 * 60 * 24 * 30,
                 path: "/",
-            });
-            console.log("hogaya");
-            console.log(serialised);
-            res.setHeader("Set-Cookie", serialised);
-            return res.json({ err: false })
+            }));
+            console.log("hogaya cookie");
+            res.send({ err: false })
             console.log("aiyla");
         }
     } catch (e) {
         console.log(e);
-        res.json({ "message": "something bad happened" })
+        res.json({ err: true })
         console.log("nahi yaar");
     }
-    console.log("galat baat");
-    console.log("bohot galat baat");
+
+    return res.json({ err: true })
 }

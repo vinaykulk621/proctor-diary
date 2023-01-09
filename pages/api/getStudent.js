@@ -7,11 +7,12 @@ export default async function (req, res) {
         const { cookies } = req;
         const token = cookies.ourSiteJwt;
         const { email } = jwt.decode(token)
+        console.log(email);
         const user = await db.collection("students").find({
             email: email
         }).toArray()
         const student = user[0]
-        return res.json(student)
+        return res.json({ student })
     } catch (e) {
         console.log(e);
     }

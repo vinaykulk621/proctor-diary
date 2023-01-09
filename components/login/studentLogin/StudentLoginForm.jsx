@@ -5,19 +5,19 @@ import Image from "next/image";
 import USNInput from "../../global/USNInput";
 import logoWhiteFont from "../../../public/logoWhiteFont.png";
 import EmailIdInput from "../utils/EmailIdInput";
+import axios from "axios";
 export default function StudentLoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [usn, setUSN] = useState("");
+  const [usn, setUsn] = useState("");
 
   async function loginHandler() {
+    const credentials = { usn, email, password };
     try {
-      const res = await fetch("http://localhost:3000/api/login", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-      if (res.err === true) {
+      const res = await axios.post("/api/login", credentials);
+      const ans=await res.json()
+      console.log(ans);
+      if (ans.err === true) {
         alert("Something went wrong");
       } else {
         window.location.reload();
@@ -25,6 +25,7 @@ export default function StudentLoginForm() {
     } catch (e) {
       console.log(e);
     }
+    window.location.reload();
   }
   return (
     <form
@@ -39,7 +40,7 @@ export default function StudentLoginForm() {
             width={100}
             height={100}
           />
-          <USNInput usn={usn} />
+          <USNInput usn={usn} setUsn={setUsn} />
           <EmailIdInput email={email} setEmail={setEmail} />
           <PasswordInput password={password} setPassword={setPassword} />
           <button
