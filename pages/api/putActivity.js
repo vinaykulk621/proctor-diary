@@ -7,7 +7,7 @@ export default async function (req, res) {
     const { cookies } = req
     const { db } = await dbConnect()
     const token = cookies.ourSiteJwt
-    const { email } = jwt.decode(token)
+    const { email } = jwt.verify(token, process.env.SECRET)
     try {
         console.log("ho raha hai");
         const res = await db.collection("activityPoints").insertOne({

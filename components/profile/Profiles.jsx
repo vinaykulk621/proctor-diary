@@ -13,7 +13,7 @@ export function Profiles({}) {
 
   async function handleName() {
     try {
-      const res = await fetch("http://localhost:3000/api/getStudent");
+      const res = await fetch("/api/getStudent");
       const ans = await res.json();
       setStudentName(ans["name"]);
       setPoctorName(ans["proctor"]);

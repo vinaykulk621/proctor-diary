@@ -2,7 +2,7 @@ import dbConnect from "../../utils/dbConnection";
 
 export default async function (req, res) {
     try {
-        const { db } = await dbConnect()
+        const { client, db } = await dbConnect()
         let activity = await db.collection("activityPoints").find({
             proctor: "Jack"
         }).toArray();

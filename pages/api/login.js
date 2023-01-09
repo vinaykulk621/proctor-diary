@@ -1,4 +1,4 @@
-import { sign } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import { serialize } from "cookie";
 import dbConnect from "../../utils/dbConnection";
 
@@ -10,26 +10,18 @@ export default async function (req, res) {
     console.log({ email, password });
     try {
         const user = await db.collection("users").find({
-            $and: [
-                {
-                    email: email,
-                },
-                {
-                    password: password
-                }
-            ]
+            email: email,
         })
         if (!user) {
-            return res.json({ status: 'Not able to find the user' })
+            return res.json({ err: true })
         } else {
             console.log("found person");
-            const token = sign(
+            const token = jwt.sign(
                 {
                     email
                 },
                 secret
             );
-
             const serialised = serialize("ourSiteJwt", token, {
                 httpOnly: true,
                 secure: process.env.NODE_ENV !== "development",
@@ -38,14 +30,16 @@ export default async function (req, res) {
                 path: "/",
             });
             console.log("hogaya");
+            console.log(serialised);
             res.setHeader("Set-Cookie", serialised);
+            return res.json({ err: false })
             console.log("aiyla");
         }
     } catch (e) {
         console.log(e);
+        res.json({ "message": "something bad happened" })
         console.log("nahi yaar");
     }
     console.log("galat baat");
-    res.json({ "message": "something bad happened" })
     console.log("bohot galat baat");
 }

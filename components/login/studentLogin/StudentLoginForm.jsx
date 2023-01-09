@@ -12,11 +12,16 @@ export default function StudentLoginForm() {
 
   async function loginHandler() {
     try {
-      await fetch("/api/login", {
+      const res = await fetch("http://localhost:3000/api/login", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
+      if (res.err === true) {
+        alert("Something went wrong");
+      } else {
+        window.location.reload();
+      }
     } catch (e) {
       console.log(e);
     }
