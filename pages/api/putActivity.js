@@ -6,7 +6,7 @@ export default async function (req, res) {
     const data = req.body
     const { cookies } = req
     const { db } = await dbConnect()
-    const token = cookies.ourSiteJwt
+    const token = cookies.loggedIn
     const { email } = jwt.verify(token, process.env.SECRET)
     try {
         console.log("ho raha hai");

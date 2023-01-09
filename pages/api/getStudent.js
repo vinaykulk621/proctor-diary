@@ -5,7 +5,7 @@ export default async function (req, res) {
     try {
         const { db } = await dbConnect()
         const { cookies } = req;
-        const token = cookies.ourSiteJwt;
+        const token = cookies.loggedIn;
         const { email } = jwt.decode(token)
         console.log(email);
         const user = await db.collection("students").find({

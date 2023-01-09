@@ -7,7 +7,7 @@ const USNInput = (props) => {
       <input
         type="text"
         name="USN"
-        className="ml-10 rounded-sm"
+        className="ml-10 rounded-sm uppercase"
         id="USN"
         defaultValue={props.usn}
         onChange={(e) => props.setUsn(e.target.value)}

@@ -1,14 +1,20 @@
-import jwt from "jsonwebtoken"
+import { serialize } from "cookie"
 
 export default async function (req, res) {
-    const { cookies } = req;
 
-    const token = cookies.ourSiteJwt;
+    const { token } = req.body
+    console.log("recieved token" + token);
 
-    if (!token) {
-        return res.json({ message: "Invalid token!" });
-    }
+    console.log("setting up token");
+    res.setHeader("Set-Cookie", serialize("loggedIn", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV !== "development",
+        sameSite: "strict",
+        maxAge: 60 * 60 * 24 * 30,
+        path: "/",
+    }));
+    console.log("hogaya cookie");
 
-    const { email } = jwt.decode(token)
+    res.send({ err: false })
     return res.json({ data: email });
 }

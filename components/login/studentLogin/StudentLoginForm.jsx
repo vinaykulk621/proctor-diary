@@ -6,6 +6,7 @@ import USNInput from "../../global/USNInput";
 import logoWhiteFont from "../../../public/logoWhiteFont.png";
 import EmailIdInput from "../utils/EmailIdInput";
 import axios from "axios";
+
 export default function StudentLoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,17 +16,20 @@ export default function StudentLoginForm() {
     const credentials = { usn, email, password };
     try {
       const res = await axios.post("/api/login", credentials);
-      const ans=await res.json()
-      console.log(ans);
-      if (ans.err === true) {
-        alert("Something went wrong");
+      const response = await res.json();
+      console.log(response);
+      if (!response.err) {
+        console.log(response);
+        document.cookie = `email=${email};expires=${new Date().getHours * 50}`;
+        console.log(getCookie("email"));
       } else {
-        window.location.reload();
+        alert("Something went wrong");
       }
     } catch (e) {
       console.log(e);
     }
     window.location.reload();
+    console.log("Something went wrong");
   }
   return (
     <form
