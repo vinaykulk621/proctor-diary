@@ -34,5 +34,5 @@ export default async function connectToDatabase() {
     cachedDb = db
 
     console.log("DataBase Hot!!");
-    return { db }
+    return { client, db }
 }

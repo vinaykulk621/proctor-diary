@@ -1,39 +1,34 @@
+import jwt from "jsonwebtoken";
 import dbConnect from "../../utils/dbConnection";
 
 
 export default async function (req, res) {
     const { db } = await dbConnect()
-    let { usn, email, password } = req.body;
-    // console.log({ usn, email, password });
+    let { email, password } = req.body;
+    console.log({ email, password });
     try {
         const user = await db.collection("users").find({
             $and: [
                 {
-                    email:
-                    {
-                        $eq: email
-                    },
+                    email: req.body.email
                 },
                 {
-                    password:
-                    {
-                        $eq: password
-                    }
+                    password: req.body.password
                 },
             ]
         })
-        // console.log(user);
-        if (!user) {
-            return res.json({ err: true })
+        if (user) {
+            console.log("userFound");
+            console.log("token created");
+            res.json({
+                email: email,
+                user: "student",
+            })
+            console.log("fuck");
         } else {
-            console.log("found person");
-            return res.json({ err: false })
-            console.log("aiyla");
+            return null
         }
     } catch (e) {
-        console.log(e);
-        res.json({ err: true })
-        console.log("nahi yaar");
+        return null
     }
-    res.json({ err: true })
 }
