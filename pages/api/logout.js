@@ -9,5 +9,5 @@ export default async function (req, res) {
         path: "/",
     });
     res.setHeader("Set-Cookie", serialised);
-    res.json({ loggedOut: true })
+    return { loggedOut: true }
 }

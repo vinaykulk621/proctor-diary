@@ -11,6 +11,10 @@ export default function middleware(req) {
         return NextResponse.redirect("http://localhost:3000/student-login");
     }
 
+    if (verify === undefined && url.includes('/activity-points')) {
+        return NextResponse.redirect("http://localhost:3000/student-login");
+    }
+
     if (verify && (url.includes("/student-login") || url.includes("/facculty-login"))) {
         return NextResponse.redirect("http://localhost:3000/profile");
     }

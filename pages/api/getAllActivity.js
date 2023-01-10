@@ -1,15 +1,19 @@
+import { cookies } from "next/headers";
+import jwt from "jsonwebtoken";
 import dbConnect from "../../utils/dbConnection";
 
 export default async function (req, res) {
     try {
-        const { client, db } = await dbConnect()
-        let activity = await db.collection("activityPoints").find({
-            proctor: "Jack"
-        }).toArray();
-        // console.log(activity);
-        return res.json(activity)
+        const { db } = await dbConnect()
+        const token = cookies().get("ouSiteJwt")
+        if (!token) {
+            return { message: "Invalid  token" }
+        }
+        const { Email } = jwt.decode(token)
+        let activity = await db.collection("activityPoints").find({ email: Email }).toArray();
+        return { activity }
     } catch (e) {
         console.log(e);
     }
-    res.json({ activity: "sdkj, " })
+    return { activity: "sdkj, " }
 }
