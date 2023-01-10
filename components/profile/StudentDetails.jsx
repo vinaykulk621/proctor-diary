@@ -1,4 +1,5 @@
 "use client";
+import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { Tablets } from "../global/Tablet";
 
@@ -11,19 +12,28 @@ export function StudentDetails({}) {
   const [addmission, setAddmission] = useState("");
   const [local, setLocal] = useState("");
   const [permanent, setPermanent] = useState("");
+  const { data: session } = useSession();
 
   async function handleStudent() {
     try {
-      const res = await fetch("/api/getStudent");
+      const res = await fetch("http://localhost:3000/api/getStudent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: session.user.email,
+        }),
+      });
       const ans = await res.json();
-      setNumber(ans["contact"]);
-      setEmail(ans["email"]);
-      setPersonalEmail(ans["personalEmail"]);
-      setDob(ans["dob"]);
-      setBlood(ans["bloodGroup"]);
-      setAddmission(ans["admissionType"]);
-      setLocal(ans["localAddress"]);
-      setPermanent(ans["permanentAddress"]);
+      setNumber(ans.contact);
+      setEmail(ans.email);
+      setPersonalEmail(ans.personalEmail);
+      setDob(ans.dob);
+      setBlood(ans.bloodGroup);
+      setAddmission(ans.admissionType);
+      setLocal(ans.localAddress);
+      setPermanent(ans.permanentAddress);
     } catch (e) {
       console.log(e);
     }

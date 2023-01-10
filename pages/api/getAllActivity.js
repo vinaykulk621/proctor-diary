@@ -4,7 +4,9 @@ import dbConnect from "../../utils/dbConnection";
 
 export default async function (req, res) {
     try {
-        const { db } = await dbConnect()
+        const client = await dbConnect()
+        const db = client.db()
+        
         const token = cookies().get("ouSiteJwt")
         if (!token) {
             return { message: "Invalid  token" }

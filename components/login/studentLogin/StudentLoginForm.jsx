@@ -2,34 +2,24 @@
 import { PasswordInput } from "../utils/PasswordInput";
 import { useState } from "react";
 import Image from "next/image";
-import USNInput from "../../global/USNInput";
 import logoWhiteFont from "../../../public/logoWhiteFont.png";
 import EmailIdInput from "../utils/EmailIdInput";
-import axios from "axios";
+import { signIn } from "next-auth/react";
 
 export default function StudentLoginForm() {
-  const [email, setEmail] = useState("");
+  const [Email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [usn, setUsn] = useState("");
+  // const [usn, setUsn] = useState("");
 
-  async function loginHandler() {
-    const credentials = { usn, email, password };
-    try {
-      const res = await axios.post("/api/login", credentials);
-      const response = await res.json();
-      console.log(response);
-      if (!response.err) {
-        console.log(response);
-        document.cookie = `email=${email};expires=${new Date().getHours * 50}`;
-        console.log(getCookie("email"));
-      } else {
-        alert("Something went wrong");
-      }
-    } catch (e) {
-      console.log(e);
-    }
-    window.location.reload();
-    console.log("Something went wrong");
+  async function loginHandler(e) {
+    e.preventDefault();
+
+    const result = await signIn("credentials", {
+      email: Email,
+      password: password,
+      redirect: true,
+      callbackUrl: "/profile",
+    });
   }
   return (
     <form
@@ -44,8 +34,8 @@ export default function StudentLoginForm() {
             width={100}
             height={100}
           />
-          <USNInput usn={usn} setUsn={setUsn} />
-          <EmailIdInput email={email} setEmail={setEmail} />
+          {/* <USNInput usn={usn} setUsn={setUsn} /> */}
+          <EmailIdInput email={Email} setEmail={setEmail} />
           <PasswordInput password={password} setPassword={setPassword} />
           <button
             type="submit"

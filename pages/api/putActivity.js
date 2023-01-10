@@ -5,7 +5,8 @@ export default async function (req, res) {
     const { duration } = req.body;
     const data = req.body
     const { cookies } = req
-    const { db } = await dbConnect()
+    const client = await dbConnect()
+    const db = client.db()
     const token = cookies.loggedIn
     const { email } = jwt.verify(token, process.env.SECRET)
     try {

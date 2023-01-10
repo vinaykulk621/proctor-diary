@@ -1,5 +1,6 @@
 "use client";
 
+import { useSession } from "next-auth/react";
 import { useState } from "react";
 
 export function StudentParentDetails({}) {
@@ -15,13 +16,20 @@ export function StudentParentDetails({}) {
   const [parent_2_contact, setparent_2_contact] = useState("");
   const [parent_2_email, setparent_2_email] = useState("");
   const [parent_2_alternate_email, setparent_2_alternate_email] = useState("");
+  const { data: session } = useSession();
 
   async function handleDetails() {
     try {
-      const res = await fetch("http://localhost:3000/api/getStudent");
+      const res = await fetch("http://localhost:3000/api/getStudent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: session.user.email,
+        }),
+      });
       const ans = await res.json();
-      // console.log(ans["details"]);
-      // console.log(ans["details"][0]["name"]);
       setparent_1(ans["details"][0]["name"]);
       setparent_1_occupation(ans["details"][0]["occupation"]);
       setparent_1_qualifiction(ans["details"][0]["qualification"]);

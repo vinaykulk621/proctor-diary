@@ -4,9 +4,9 @@ import { GuideLinesFinalContainer } from "../components/home/guideLines/GuideLin
 import { RolesFinalContainer } from "../components/home/rolesAndResponsibility/RolesFinalContainer";
 import Wrapper from "../components/global/Wrapper";
 import laptopBG from "../public/laptopBG.webp";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
-  const user = false;
   return (
     <Wrapper>
       <FirstSection laptopBG={laptopBG} />
