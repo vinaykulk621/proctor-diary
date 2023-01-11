@@ -1,4 +1,4 @@
-const CustomInput = ({ type = "text", name, label, val, change }) => {
+const CustomInput = ({ type = "text", name, label }) => {
   return (
     <div className="flex justify-evenly items-center p-5 space-x-2">
       <label htmlFor={name} className="text-white">
@@ -10,25 +10,16 @@ const CustomInput = ({ type = "text", name, label, val, change }) => {
           name={name}
           className="rounded-sm"
           id={name}
-          onChange={(e) => change(e.target.value)}
           required
         />
       ) : type == "file" ? (
-        <input
-          type={type}
-          name={name}
-          className="rounded-sm"
-          id={name}
-          // onChange={(e) => change(e.target.value)}
-          required
-        />
+        <input type={type} name={name} className="rounded-sm" id={name} />
       ) : (
         <input
           type={type}
           name={name}
           className="rounded-sm"
           id={name}
-          // onChange={(e) => change(e.target.value)}
           required
         />
       )}

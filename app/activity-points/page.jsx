@@ -1,17 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useSession } from "next-auth/react";
 import { ActivityPointsLog } from "../../components/activity/ActivityPointsLog";
 import CustomInput from "../../components/global/CustomInput";
 import Wrapper from "../../components/global/Wrapper";
 
 export default function Home() {
-  const [usn, setUsn] = useState("");
-  const [name, setName] = useState("");
-  const [activityName, setActivityName] = useState("");
-  const [location, setLocation] = useState("");
-  const [date, setDate] = useState("");
-  const [hours, setHours] = useState("");
-
+  const { data: session } = useSession();
+  console.log(session);
   const handle = async (e) => {
     e.preventDefault();
     try {
@@ -40,35 +35,17 @@ export default function Home() {
           <div className="flex flex-1 p-5 flex-col items-center justify-center">
             <div className="border-2 border-black bg-gray-700 flex flex-col rounded-md space-y-1">
               <div className="flex flex-row">
-                <CustomInput
-                  name="StudentName"
-                  label="Student-Name"
-                  change={setName}
-                />
-                <CustomInput name="USN" label="USN" change={setUsn} />
-                <CustomInput
-                  name="ActivityName"
-                  label="Activity-Name"
-                  change={setActivityName}
-                />
+                <CustomInput name="StudentName" label="Student-Name" />
+                <CustomInput name="USN" label="USN" />
+                <CustomInput name="ActivityName" label="Activity-Name" />
               </div>
               <div className="flex flex-row">
-                <CustomInput
-                  name="Location"
-                  label="Location"
-                  change={setLocation}
-                />
-                <CustomInput
-                  type="date"
-                  name="Date"
-                  label="Date"
-                  change={setDate}
-                />
+                <CustomInput name="Location" label="Location" />
+                <CustomInput type="date" name="Date" label="Date" />
                 <CustomInput
                   type="number"
                   name="numberOfHoursWorked"
                   label="Number of Hours Worked"
-                  change={setHours}
                 />
               </div>
               <div className="flex justify-center">
@@ -89,7 +66,7 @@ export default function Home() {
         </form>
         <div className="border-b-8 border-b-yellow-400" />
         <h1 className="text-4xl px-5 py-10">Previous Activity Points Claims</h1>
-        <ActivityPointsLog />
+        {/* <ActivityPointsLog /> */}
       </div>
     </Wrapper>
   );

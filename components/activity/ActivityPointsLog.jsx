@@ -1,14 +1,24 @@
-import { use } from "react";
-async function handler() {
+import { useSession } from "next-auth/react";
+
+async function handler(req) {
   try {
-    const res = await fetch("http://localhost:3000/api/getAllActivity");
+    const res = await fetch("http://localhost:3000/api/getAllActivity", {
+      method: "POST",
+      headers: {
+        "Content-Type": "aplication/json",
+      },
+      body: JSON.stringify({
+        email: req.body,
+      }),
+    });
     return await res.json();
   } catch (e) {
     console.log(e);
   }
 }
-export function ActivityPointsLog({}) {
-  const activity = use(handler());
+export default function ActivityPointsLog({}) {
+  const { data: session } = useSession();
+  const activity = use(handler(session.user.email));
   return (
     <table className="table-fixed w-auto ml-20 mr-20">
       <thead className="border-b border-slate-600">
