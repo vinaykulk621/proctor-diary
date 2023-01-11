@@ -9,8 +9,8 @@ export function PasswordInput(props) {
         name="password"
         className="ml-2 rounded-sm"
         id="password"
-        defaultValue={props.Password}
-        onChange={(e) => props.setPassword(e.target.value)}
+        // defaultValue={props.Password}
+        // onChange={(e) => props.setPassword(e.target.value)}
         required
       />
     </div>

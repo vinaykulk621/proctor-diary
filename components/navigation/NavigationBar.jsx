@@ -6,11 +6,17 @@ export function NavigationBar({}) {
   return (
     <nav className="flex space-x-5 items-center text-[20px]">
       <NavBar href="/" children="Home" />
-      <NavBar href="/facculty-login" children={"Facculty-login"} />
-      <NavBar href="/student-login" children={"Student-login"} />
-      <NavBar href="/course-registration" children="Course-registration" />
+      {session?.user?.email == "proctor@bmsce.ac.in" ? (
+        ""
+      ) : (
+        <NavBar href="/course-registration" children="Course-registration" />
+      )}
       <NavBar href="/activity-points" children="Activity-points" />
-      <NavBar href="/profile" children="Profile" />
+      {session?.user?.email == "proctor@bmsce.ac.in" ? (
+        <NavBar href="/profile/faculty" children="Profile" />
+      ) : (
+        <NavBar href="/profile" children="Profile" />
+      )}
       {session?.user ? (
         <>
           <p className="text-sky-600"> {session.user.email}</p>

@@ -9,8 +9,8 @@ const EmailIdInput = (props) => {
         name="email"
         className="ml-4 rounded-sm"
         id="email"
-        defaultValue={props.email}
-        onChange={(e) => props.setEmail(e.target.value)}
+        // defaultValue={props.email}
+        // onChange={(e) => props.setUsn(e.target.value)}
       />
     </div>
   );

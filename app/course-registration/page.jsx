@@ -1,13 +1,13 @@
 import { PrevSemCourses } from "../../components/Regitration/PrevSemCourses";
 import { CurrentSemCourses } from "../../components/Regitration/CurrentSemCourses";
-import { StudentProcotorDeatails } from "../../components/Regitration/StudentProcotorDeatails";
+import { StudentProctorDeatails } from "../../components/Regitration/StudentProctorDeatails";
 import Wrapper from "../../components/global/Wrapper";
 
 export default function Home() {
   return (
     <Wrapper>
       <div className="bg-yellow-400">
-        <StudentProcotorDeatails />
+        <StudentProctorDeatails />
         <div className="flex flex-col">
           <CurrentSemCourses />
           <PrevSemCourses />

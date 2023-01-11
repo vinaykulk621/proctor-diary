@@ -1,27 +1,25 @@
 "use client";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
-import { ProfilePalleteWithNames } from "./ProfilePalleteWithNames";
+import { ProfilePalleteWithNames } from "../ProfilePalleteWithNames";
 
 export function Profiles({}) {
-  const [studentName, setStudentName] = useState("");
   const [poctorName, setPoctorName] = useState("");
   const { data: session } = useSession();
 
   async function handleName() {
     try {
-      const res = await fetch("http://localhost:3000/api/getStudent", {
+      const res = await fetch("http://localhost:3000/api/getProctor", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: session.user.email,
+          email: session?.user?.email,
         }),
       });
       const ans = await res.json();
-      setStudentName(ans.name);
-      setPoctorName(ans.proctor);
+      setPoctorName(ans.name);
     } catch (e) {
       console.log(e);
     }
@@ -31,12 +29,6 @@ export function Profiles({}) {
 
   return (
     <div className="flex flex-col space-y-10 pt-10">
-      {session?.user?.email == "vinay.cs20@bmsce.ac.in" ||
-      session?.user?.email == "utsav.cs20@bmsce.ac.in" ? (
-        <ProfilePalleteWithNames width={500} height={500} name={studentName} />
-      ) : (
-        ""
-      )}
       <ProfilePalleteWithNames width={500} height={500} name={poctorName} />
     </div>
   );

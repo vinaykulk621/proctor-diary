@@ -4,12 +4,12 @@ export default async function (req, res) {
     const client = await dbConnect()
     const db = client.db()
     try {
-        const student = await db.collection("students").findOne({
+        const proctor = await db.collection("proctors").findOne({
             email: req.body.email
         })
-        if (student) {
+        if (proctor) {
             client.close()
-            res.status(200).json(student)
+            return res.status(200).json(proctor)
         }
     } catch (e) {
         console.log(e);

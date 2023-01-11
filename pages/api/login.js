@@ -10,8 +10,16 @@ export default async function (req, res) {
     try {
         console.log(req.body.email, "in API");
         const user = await db.collection("users").findOne({
-            email: req.body.email
+            $and: [
+                {
+                    email: req.body.email
+                },
+                {
+                    usn: req.body.usn
+                }
+            ]
         })
+        console.log(user);
         if (user) {
             console.log(user);
             console.log("userFound");

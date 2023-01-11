@@ -2,8 +2,9 @@
 import { useState } from "react";
 import { Tablets } from "../global/Tablet";
 import { ProfilePallete } from "../global/profilePallete";
+import { useSession } from "next-auth/react";
 
-export function StudentProcotorDeatails({}) {
+export function StudentProctorDeatails({}) {
   const [usn, setUSN] = useState("");
   const [studentName, setStudentName] = useState("");
   const [number, setNumber] = useState("");
@@ -11,9 +12,19 @@ export function StudentProcotorDeatails({}) {
   const [department, setDepartment] = useState("");
   const [semester, setSemester] = useState("");
   const [section, setSection] = useState("");
+  const { data: session } = useSession();
+
   async function handleStudent() {
     try {
-      const res = await fetch("/api/getStudent");
+      const res = await fetch("http://localhost:3000/api/getStudent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: session.user.email,
+        }),
+      });
       const ans = await res.json();
       console.log(ans);
       setNumber(ans["contact"]);
@@ -43,10 +54,10 @@ export function StudentProcotorDeatails({}) {
       </div>
       <ProfilePallete width={250} height={250} />
       <div className="flex flex-col space-y-4">
-        <Tablets content={"Proctor Name"} />
-        <Tablets content={"Proctor Email"} />
-        <Tablets content={"Department"} />
-        <Tablets content={"Mobile Number"} />
+        <Tablets content={"Proctor"} />
+        <Tablets content={"proctor@bmsce.ac.in"} />
+        <Tablets content={"CSE"} />
+        <Tablets content={"+91-1234567890"} />
       </div>
     </div>
   );

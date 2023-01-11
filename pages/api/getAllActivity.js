@@ -1,14 +1,18 @@
 import dbConnect from "../../utils/dbConnection";
 
 export default async function (req, res) {
+    const client = await dbConnect()
+    const db = client.db()
     try {
-        const client = await dbConnect()
-        const db = client.db()
-        const { Email } = req.body
-        let activity = await db.collection("activityPoints").find({ email: Email }).toArray();
-        return { activity }
+        const activity = await db.collection("activityPoints").find({}).toArray();
+        if (activity) {
+            // console.log("api", activity);
+            client.close()
+            res.json(activity)
+        }
     } catch (e) {
         console.log(e);
+        return { message: "Something went wrong" }
     }
-    return { activity: "sdkj, " }
+    return { message: "error" }
 }
