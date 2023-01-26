@@ -10,7 +10,11 @@ export default function Home() {
         <StudentProctorDeatails />
         <div className="flex flex-col">
           <CurrentSemCourses />
-          <PrevSemCourses />
+          <div className="flex justify-center items-center">
+            <button type="submit" className="bg-green-500 rounded-lg w-40 py-1">
+              Registered
+            </button>
+          </div>
         </div>
       </div>
     </Wrapper>

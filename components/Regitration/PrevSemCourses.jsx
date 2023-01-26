@@ -18,7 +18,7 @@ export async function PrevSemCourses({}) {
           <>
             <div className="h-20" />
             <h1 className="text-3xl p-5">Semester-{e.semester}</h1>
-            <table className="table-fixed w-auto ml-20 mr-20 " key={i}>
+            <table className="table-fixed w-auto ml-20 mr-20" key={i}>
               <thead className="border-b border-slate-600">
                 <tr>
                   <th className="border-r border-slate-600 p-2">Course Code</th>

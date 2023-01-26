@@ -46,11 +46,6 @@ export async function CurrentSemCourses({}) {
           })}
         </tbody>
       </table>
-      <div className="flex justify-center items-center">
-        <button type="submit" className="bg-green-500 rounded-lg w-40 py-1">
-          Registered
-        </button>
-      </div>
     </>
   );
 }
