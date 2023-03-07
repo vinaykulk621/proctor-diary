@@ -1,3 +1,5 @@
+/** @format */
+
 import Link from "next/link";
 import Wrapper from "../../components/global/Wrapper";
 import styles from "../styles.module.css";
@@ -5,7 +7,7 @@ import styles from "../styles.module.css";
 export default function Home() {
   return (
     <Wrapper>
-      <div className="flex justify-center items-center flex-col">
+      <div className='flex justify-center items-center flex-col'>
         <table className={styles.content}>
           <thead>
             <tr>
@@ -33,8 +35,10 @@ export default function Home() {
             </tr>
           </tbody>
         </table>
-        <Link href={"https://meet.google.com/"} target={"_blank"}>
-          <p className="p-5 bg-blue-600 rounded-lg text-3xl">Start a Meet</p>
+        <Link
+          href={"https://meet.google.com/"}
+          target={"_blank"}>
+          <p className='p-5 bg-blue-600 rounded-lg text-3xl'>Start a Meet</p>
         </Link>
       </div>
     </Wrapper>

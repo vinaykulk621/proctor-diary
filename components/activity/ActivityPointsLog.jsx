@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 import { use } from "react";
 async function handler() {
@@ -17,29 +19,29 @@ async function handler() {
 export function ActivityPointsLog() {
   const activity = use(handler());
   return (
-    <table className="table-fixed w-auto ml-20 mr-20 mb-20">
-      <thead className="border-b border-slate-600">
+    <table className='table-fixed w-auto ml-20 mr-20 mb-20'>
+      <thead className='border-b border-slate-600'>
         <tr>
-          <th className="border-r border-slate-600 p-2">Student-Name</th>
-          <th className="border-r border-slate-600 p-2">Activity-Name</th>
-          <th className="border-r border-slate-600 p-2">Location</th>
-          <th className="border-r border-slate-600 p-2">Date</th>
-          <th className="border-r border-slate-600 p-2">Duration(Hrs)</th>
-          <th className="border-r-0 border-slate-600 p-2">Activity-Points</th>
+          <th className='border-r border-slate-600 p-2'>Student-Name</th>
+          <th className='border-r border-slate-600 p-2'>Activity-Name</th>
+          <th className='border-r border-slate-600 p-2'>Location</th>
+          <th className='border-r border-slate-600 p-2'>Date</th>
+          <th className='border-r border-slate-600 p-2'>Duration(Hrs)</th>
+          <th className='border-r-0 border-slate-600 p-2'>Activity-Points</th>
         </tr>
       </thead>
-      <tbody className="text-justify">
+      <tbody className='text-justify'>
         {activity.map((e, i) => {
           return (
             <tr key={i}>
-              <td className="border-r border-slate-600 p-2">{e.studentName}</td>
-              <td className="border-r border-slate-600 p-2">
+              <td className='border-r border-slate-600 p-2'>{e.studentName}</td>
+              <td className='border-r border-slate-600 p-2'>
                 {e.activityName}
               </td>
-              <td className="border-r border-slate-600 p-2">{e.location}</td>
-              <td className="border-r border-slate-600 p-2">{e.date}</td>
-              <td className="border-r border-slate-600 p-2">{e.duration}</td>
-              <td className="border-r-0 border-slate-600 p-2">{e.points}</td>
+              <td className='border-r border-slate-600 p-2'>{e.location}</td>
+              <td className='border-r border-slate-600 p-2'>{e.date}</td>
+              <td className='border-r border-slate-600 p-2'>{e.duration}</td>
+              <td className='border-r-0 border-slate-600 p-2'>{e.points}</td>
             </tr>
           );
         })}

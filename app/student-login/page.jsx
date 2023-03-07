@@ -1,3 +1,5 @@
+/** @format */
+
 // "use client";
 import StudentLoginForm from "../../components/login/studentLogin/StudentLoginForm";
 

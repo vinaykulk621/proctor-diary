@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
@@ -28,8 +30,12 @@ export function Profiles({}) {
   handleName();
 
   return (
-    <div className="flex flex-col space-y-10 pt-10">
-      <ProfilePalleteWithNames width={500} height={500} name={poctorName} />
+    <div className='flex flex-col space-y-10 pt-10'>
+      <ProfilePalleteWithNames
+        width={500}
+        height={500}
+        name={poctorName}
+      />
     </div>
   );
 }

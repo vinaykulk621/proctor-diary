@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 import { useSession } from "next-auth/react";
 import { use, useState } from "react";
@@ -27,7 +29,7 @@ export function ProctorStudents({}) {
   console.log("this is students", students);
 
   return (
-    <table className="table-fixed">
+    <table className='table-fixed'>
       <thead>
         <tr>
           <th>Student Name</th>
@@ -55,7 +57,7 @@ export function ProctorStudents({}) {
             <td>{e.addmission}</td>
             <td>{e.local}</td>
             <td>{e.permanent}</td>
-          </tr>
+          </tr>;
         })}
       </tbody>
     </table>

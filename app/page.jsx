@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 import { FirstSection } from "../components/home/firstSection";
 import { GuideLinesFinalContainer } from "../components/home/guideLines/GuideLinesFinalContainer";
@@ -10,9 +12,9 @@ export default function Home() {
   return (
     <Wrapper>
       <FirstSection laptopBG={laptopBG} />
-      <div className="h-28" />
+      <div className='h-28' />
       <RolesFinalContainer />
-      <div className="border-b-8 border-yellow-400 mb-20 mt-20" />
+      <div className='border-b-8 border-yellow-400 mb-20 mt-20' />
       <GuideLinesFinalContainer />
     </Wrapper>
   );

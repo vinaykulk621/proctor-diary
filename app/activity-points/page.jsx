@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 import { useSession } from "next-auth/react";
 import { ActivityPointsLog } from "../../components/activity/ActivityPointsLog";
@@ -29,40 +31,55 @@ export default function Home() {
 
   return (
     <Wrapper>
-      <div className="flex flex-col">
+      <div className='flex flex-col'>
         {session?.user?.email === "utsav.cs20@bmsce.ac.in" ||
         session?.user?.email === "vinay.cs20@bmsce.ac.in" ? (
           <ActivityPointsLog />
         ) : (
           <div>
             <form onSubmit={handle}>
-              <div className="flex flex-1 p-5 flex-col items-center justify-center">
-                <div className="border-2 border-black bg-gray-700 flex flex-col rounded-md space-y-1">
-                  <div className="flex flex-row">
-                    <CustomInput name="StudentName" label="Student-Name" />
-                    <CustomInput name="USN" label="USN" />
-                    <CustomInput name="ActivityName" label="Activity-Name" />
-                  </div>
-                  <div className="flex flex-row">
-                    <CustomInput name="Location" label="Location" />
-                    <CustomInput type="date" name="Date" label="Date" />
+              <div className='flex flex-1 p-5 flex-col items-center justify-center'>
+                <div className='border-2 border-black bg-gray-700 flex flex-col rounded-md space-y-1'>
+                  <div className='flex flex-row'>
                     <CustomInput
-                      type="number"
-                      name="numberOfHoursWorked"
-                      label="Number of Hours Worked"
+                      name='StudentName'
+                      label='Student-Name'
+                    />
+                    <CustomInput
+                      name='USN'
+                      label='USN'
+                    />
+                    <CustomInput
+                      name='ActivityName'
+                      label='Activity-Name'
                     />
                   </div>
-                  <div className="flex justify-center">
+                  <div className='flex flex-row'>
                     <CustomInput
-                      type="file"
-                      name="Certificate"
-                      label="Attatch Certificate of Participation"
+                      name='Location'
+                      label='Location'
+                    />
+                    <CustomInput
+                      type='date'
+                      name='Date'
+                      label='Date'
+                    />
+                    <CustomInput
+                      type='number'
+                      name='numberOfHoursWorked'
+                      label='Number of Hours Worked'
+                    />
+                  </div>
+                  <div className='flex justify-center'>
+                    <CustomInput
+                      type='file'
+                      name='Certificate'
+                      label='Attatch Certificate of Participation'
                     />
                   </div>
                   <button
-                    className="bg-green-500 px-3 py-1 w-40 h-7 rounded-md m-auto"
-                    type="submit"
-                  >
+                    className='bg-green-500 px-3 py-1 w-40 h-7 rounded-md m-auto'
+                    type='submit'>
                     Claim
                   </button>
                 </div>

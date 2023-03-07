@@ -1,9 +1,11 @@
+/** @format */
+
 import Wrapper from "../../components/global/Wrapper";
 import styles from "../styles.module.css";
 
 export default function Home() {
   return (
-    <div className="flex justify-center items-center">
+    <div className='flex justify-center items-center'>
       <Wrapper>
         <table className={styles.content}>
           <thead>
@@ -61,7 +63,10 @@ export default function Home() {
             </tr> */}
           </tbody>
         </table>
-        <p>The data on scholarship is updated by the addmission office<span className="text-red-800">*</span></p>
+        <p>
+          The data on scholarship is updated by the addmission office
+          <span className='text-red-800'>*</span>
+        </p>
       </Wrapper>
     </div>
   );

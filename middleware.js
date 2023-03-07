@@ -1,7 +1,17 @@
+/** @format */
+
 export { default } from "next-auth/middleware";
 export const config = {
-    matcher: [
-        "/profile", "/activity-points", "/course-registration", "/faculty/profile", "/handling", "/exams", "/extra-curricular", "/internship",
-        "/proctor-meet", "/scholarship"
-    ]
-}
+  matcher: [
+    "/profile",
+    "/activity-points",
+    "/course-registration",
+    "/faculty/profile",
+    "/handling",
+    "/exams",
+    "/extra-curricular",
+    "/internship",
+    "/proctor-meet",
+    "/scholarship",
+  ],
+};

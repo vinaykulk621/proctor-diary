@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 
 import { useSession } from "next-auth/react";
@@ -49,33 +51,33 @@ export function StudentParentDetails({}) {
   }
   handleDetails();
   return (
-    <div className="flex flex-row justify-evenly">
-      <div className="flex flex-col">
-        <h1 className="pb-8 text-2xl font-bold">Details</h1>
-        <p className="text-xl">Name</p>
-        <p className="text-xl">Occupation</p>
-        <p className="text-xl">Qualification</p>
-        <p className="text-xl">Contact Number</p>
-        <p className="text-xl">Email-id</p>
-        <p className="text-xl">Alternate Email-id</p>
+    <div className='flex flex-row justify-evenly'>
+      <div className='flex flex-col'>
+        <h1 className='pb-8 text-2xl font-bold'>Details</h1>
+        <p className='text-xl'>Name</p>
+        <p className='text-xl'>Occupation</p>
+        <p className='text-xl'>Qualification</p>
+        <p className='text-xl'>Contact Number</p>
+        <p className='text-xl'>Email-id</p>
+        <p className='text-xl'>Alternate Email-id</p>
       </div>
-      <div className="flex flex-col">
-        <h1 className="pb-8 text-2xl font-bold">Father/Gaurdian-1</h1>
-        <p className="text-xl">{parent_1}</p>
-        <p className="text-xl">{parent_1_occupation}</p>
-        <p className="text-xl">{parent_1_qualifiction}</p>
-        <p className="text-xl">{parent_1_contact}</p>
-        <p className="text-xl">{parent_1_email}</p>
-        <p className="text-xl">{parent_1_alternate_email}</p>
+      <div className='flex flex-col'>
+        <h1 className='pb-8 text-2xl font-bold'>Father/Gaurdian-1</h1>
+        <p className='text-xl'>{parent_1}</p>
+        <p className='text-xl'>{parent_1_occupation}</p>
+        <p className='text-xl'>{parent_1_qualifiction}</p>
+        <p className='text-xl'>{parent_1_contact}</p>
+        <p className='text-xl'>{parent_1_email}</p>
+        <p className='text-xl'>{parent_1_alternate_email}</p>
       </div>
-      <div className="flex flex-col">
-        <h1 className="pb-8 text-2xl font-bold">Mother/Gaurdian-2</h1>
-        <p className="text-xl">{parent_2}</p>
-        <p className="text-xl">{parent_2_occupation}</p>
-        <p className="text-xl">{parent_2_qualifiction}</p>
-        <p className="text-xl">{parent_2_contact}</p>
-        <p className="text-xl">{parent_2_email}</p>
-        <p className="text-xl">{parent_2_alternate_email}</p>
+      <div className='flex flex-col'>
+        <h1 className='pb-8 text-2xl font-bold'>Mother/Gaurdian-2</h1>
+        <p className='text-xl'>{parent_2}</p>
+        <p className='text-xl'>{parent_2_occupation}</p>
+        <p className='text-xl'>{parent_2_qualifiction}</p>
+        <p className='text-xl'>{parent_2_contact}</p>
+        <p className='text-xl'>{parent_2_email}</p>
+        <p className='text-xl'>{parent_2_alternate_email}</p>
       </div>
     </div>
   );

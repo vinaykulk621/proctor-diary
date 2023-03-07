@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 import { ProctorStudents } from "../../../components/profile/faculty/proctorStudents";
 import { Profiles } from "../../../components/profile/faculty/Profile";
@@ -34,15 +36,24 @@ export default function Home() {
 
   return (
     <Wrapper>
-      <div className="bg-yellow-400 h-screen">
-        <div className="flex flex-col justify-evenly space-y-8">
-          <div className="flex flex-col w-80">
+      <div className='bg-yellow-400 h-screen'>
+        <div className='flex flex-col justify-evenly space-y-8'>
+          <div className='flex flex-col w-80'>
             <Profiles />
-            <Tablets content={number} label="Phone-Number" />
-            <Tablets content={email} label="Email-Id" />
-            <Tablets content={department} label="department" />
+            <Tablets
+              content={number}
+              label='Phone-Number'
+            />
+            <Tablets
+              content={email}
+              label='Email-Id'
+            />
+            <Tablets
+              content={department}
+              label='department'
+            />
           </div>
-          <table className="table-auto">
+          <table className='table-auto'>
             <thead>
               <tr>
                 <th>name</th>

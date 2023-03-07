@@ -1,3 +1,5 @@
+/** @format */
+
 import Wrapper from "../../components/global/Wrapper";
 import styles from "../styles.module.css";
 
@@ -8,9 +10,9 @@ export default function Home() {
         The Awards and health records are updated by the respected department
         office.
       </p>
-      <div className="flex justify-around items-center flex-row pt-8">
-        <div className="flex flex-col">
-          <h1 className="text-xl font-bold">Health Issues</h1>
+      <div className='flex justify-around items-center flex-row pt-8'>
+        <div className='flex flex-col'>
+          <h1 className='text-xl font-bold'>Health Issues</h1>
           <table className={styles.content}>
             <thead>
               <tr>
@@ -53,8 +55,8 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-        <div className="flex flex-col">
-          <h1 className="text-xl font-bold">Awards/Achievements</h1>
+        <div className='flex flex-col'>
+          <h1 className='text-xl font-bold'>Awards/Achievements</h1>
           <table className={styles.content}>
             <thead>
               <tr>

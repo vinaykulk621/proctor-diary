@@ -1,9 +1,11 @@
+/** @format */
+
 import Wrapper from "../../components/global/Wrapper";
 import styles from "../styles.module.css";
 
 export default function Home() {
   return (
-    <div className="flex justify-center items-center">
+    <div className='flex justify-center items-center'>
       <Wrapper>
         <table className={styles.content}>
           <thead>

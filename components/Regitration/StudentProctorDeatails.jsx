@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 import { useState } from "react";
 import { Tablets } from "../global/Tablet";
@@ -40,20 +42,44 @@ export function StudentProctorDeatails({}) {
   }
   handleStudent();
   return (
-    <div className="flex flex-row space-x-16 text-center pb-10 justify-evenly ">
-      <div className="flex flex-col space-y-4">
-        <Tablets content={usn} label="USN" />
-        <Tablets content={studentName} label="Student-Name" />
-        <Tablets content={email} label="College-Email" />
-        <Tablets content={department} label="Department" />
-        <Tablets content={number} label="Phone-Number" />
+    <div className='flex flex-row space-x-16 text-center pb-10 justify-evenly '>
+      <div className='flex flex-col space-y-4'>
+        <Tablets
+          content={usn}
+          label='USN'
+        />
+        <Tablets
+          content={studentName}
+          label='Student-Name'
+        />
+        <Tablets
+          content={email}
+          label='College-Email'
+        />
+        <Tablets
+          content={department}
+          label='Department'
+        />
+        <Tablets
+          content={number}
+          label='Phone-Number'
+        />
       </div>
-      <div className="flex flex-col space-y-4">
-        <Tablets content={semester} label="Semester" />
-        <Tablets content={section} label="Section" />
+      <div className='flex flex-col space-y-4'>
+        <Tablets
+          content={semester}
+          label='Semester'
+        />
+        <Tablets
+          content={section}
+          label='Section'
+        />
       </div>
-      <ProfilePallete width={250} height={250} />
-      <div className="flex flex-col space-y-4">
+      <ProfilePallete
+        width={250}
+        height={250}
+      />
+      <div className='flex flex-col space-y-4'>
         <Tablets content={"Proctor"} />
         <Tablets content={"proctor@bmsce.ac.in"} />
         <Tablets content={"CSE"} />

@@ -1,3 +1,5 @@
+/** @format */
+
 import Wrapper from "../../components/global/Wrapper";
 import styles from "../styles.module.css";
 
