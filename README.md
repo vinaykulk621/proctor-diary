@@ -7,3 +7,9 @@
 * Next.Js-13
 * TailwindCSS
 * MongoDB
+
+![Alt text](./screenShots/home.png)
+<br>
+
+![Alt text](./screenShots/home-2.png)
+<br>
